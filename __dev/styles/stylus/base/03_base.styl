@@ -1,0 +1,143 @@
+html
+	size(100%, 100%)
+html
+	height: 100%;
+
+body
+	base-font()
+	min-height 100%
+	if $wrapper_min_width > 0px
+		min-width $wrapper_min_width + ($wrapper_padding*2)
+	else
+		if $wrapper_width > 0px
+			min-width $wrapper_width + ($wrapper_padding*2)
+
+.wrapper-content
+	if $wrapper_max_width > 0px
+		max-width $wrapper_max_width
+	if $wrapper_min_width > 0px
+		min-width $wrapper_min_width
+	if $wrapper_width > 0px
+		width $wrapper_width
+	margin 0 auto
+	padding 0 $wrapper_padding
+	
+.block
+	display block !important
+
+.inlineBlock
+	display inline-block !important
+
+.table
+	display table
+	width 100%
+
+	&-cell
+		display table-cell
+		vertical-align top
+
+	&-row,
+	&-rows
+		display table-row
+
+	&-column,
+	&-columns
+		display table-column
+main
+// 	b, strong
+// 		font-weight 700
+
+// 	i
+// 		font-style italic
+
+// 	a
+// 		text-decoration underline
+// 		color #001f45
+// 		&:hover
+// 			text-decoration none
+	img
+		max-width 100%
+
+.content-center
+	content-center(100%)
+
+.content-center-force
+	content-center(100%, 100%, true)
+
+.clear,
+.clearfix
+	clear()
+
+.hidden
+	display none
+
+.close-content
+	position fixed
+	top 0
+	left 0
+	z-index 5
+	size(100%, 100%)
+	opacity(20)
+	background #000
+	
+.middle
+	vertical-align middle !important
+
+.bottom
+	vertical-align bottom !important
+
+
+for $i in 0 5 10 15 20 25 30 35 40 45 50 55 60 65 70 75 80 85 90 95 100
+	for $v in 'm' 'p'
+		.{$v}-{ $i }
+			if $v == 'm'
+				margin ($i px)  !important
+			else
+				padding ($i px)  !important
+		.{$v}t-{ $i }
+			if $v == 'm'
+				margin-top ($i px)  !important
+			else
+				padding-top ($i px)  !important
+		.{$v}b-{ $i }
+			if $v == 'm'
+				margin-bottom ($i px)  !important
+			else
+				padding-bottom ($i px)  !important
+		.{$v}l-{ $i }
+			if $v == 'm'
+				margin-left ($i px)  !important
+			else
+				padding-left ($i px)  !important
+		.{$v}r-{ $i }
+			if $v == 'm'
+				margin-right ($i px)  !important
+			else
+				padding-right ($i px)  !important
+				
+		.{$v}h-{ $i }
+			if $v == 'm'
+				margin-right ($i px)  !important
+				margin-left ($i px)  !important
+			else
+				padding-right ($i px)  !important
+				padding-left ($i px)  !important
+				
+		.{$v}v-{ $i }
+			if $v == 'm'
+				margin-top ($i px)  !important
+				margin-bottom ($i px)  !important
+			else
+				padding-top ($i px)  !important
+				padding-bottom ($i px)  !important
+			
+for $j in 1..100
+	.width-{ $j }
+		if( $j == 33 )
+			width 33.33%  !important
+			
+		if( $j == 66 )
+			width 66.66%  !important
+		else
+			width $j + '%'  !important
+			

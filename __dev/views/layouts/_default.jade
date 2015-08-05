@@ -1,0 +1,20 @@
+include ../modules/__mixins
+include ../modules/_variables
+block vars
+doctype html
+html(lang="ru").no-js
+	include includes/head.jade
+	body
+		include includes/header.jade
+		div.container
+			block block-content
+
+		p test qweee1
+		img(src="images/logo.png" alt="")
+		a(href="#") Ссылка 1
+		a(href="#") Ссылка 2
+
+		include includes/footer.jade
+
+			//- .pops.js-pops
+			//- include ../modules/pops.jade

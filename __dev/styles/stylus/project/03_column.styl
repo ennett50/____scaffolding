@@ -1,0 +1,10 @@
+.column
+	display block
+	float left
+	width 100%
+	
+	for count in (2..10)
+		for index in (1..count)
+			if(index != count)
+				&.__{index}-{count}
+					width ( (100/count)*index )%

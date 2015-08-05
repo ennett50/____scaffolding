@@ -1,0 +1,189 @@
+mixin wrapIn( arr )
+	!= arr[0]
+	block
+	!= arr[1]
+
+mixin wrapInCtn( option )
+	!= option[0]
+		block
+	!= option[1]
+
+-var isCurrentLink = function(title)
+	-var res = false
+	-each cur in currentPageTitle
+		-if( cur.toLowerCase() == title.toLowerCase() )
+			-res = true
+			-return res
+	-return res
+
+-var returnLink = function(val)
+	-if(val.link)
+		-return val.link
+
+	-if(val.href)
+		-return val.href
+
+	-if(val.src)
+		-return val.src
+
+-var returnLabel = function(val)
+	-if(val.label)
+		-return val.label
+
+	-if(val.title)
+		-return val.title
+
+	-if(val.text)
+		-return val.text
+
+	-if(val.txt)
+		-return val.txt
+
+
+mixin pageTitle( title )
+	h1.hr-title-text
+		span!= ( title ? title : currentPageTitle[ currentPageTitle.length - 1 ] )
+
+mixin simpleNav(className, arrNav)
+	nav(class="#{ className }-nav")
+		ul(class="#{ className }-list")
+			-each item in arrNav
+				li(class="#{ className }-item")
+					-if( item.isTitle === true )
+						span(class="#{className}-link current title")!= returnLabel(item)
+					-else
+						+wrapIn( ( !isCurrentLink( returnLabel(item) ) ? [ '<a href="' + returnLink( item ) + '" class="' + className + '-link">', '</a>' ] : [ '<span class="' + className + '-link current">', '</span>' ] ) )
+							!= returnLabel(item)
+
+
+mixin pagination( arr, showPrevNext )
+	div.pagination
+		-var isFirst = true
+		-if(showPrevNext == true)
+			span.pagination-prev.__disabled
+			each br in arr
+				-if(isFirst)
+					-isFirst = false
+					span.pagination-link.__current!= br
+				-else if ( br == ". . ")
+					span.pagination-empty!= br
+				-else
+					a(href="#").pagination-link!= br
+		-if(showPrevNext == true)
+			a(href="#").pagination-next
+
+
+mixin breadcrumbsSimple(brArray, sep, wrap)
+	-if( !sep )
+		-sep = ''
+	-var counter = 0
+	.breadcrumbs
+		-if( wrap === true )
+			-wrap = [ '<div class="breadcrumbs-wrapper wrapper-content">', '</div>' ]
+		-else
+			-wrap = ['', '']
+		+wrapIn( wrap )
+			a(href="./main.html").breadcrumbs-link Главная
+			-each br in brArray
+				-if(br== "") continue
+				span.breadcrumbs-sep!= sep
+
+				-if( (counter + 1) == brArray.length )
+					span.breadcrumbs-link.__current!= br
+				-else
+					a(href="#").breadcrumbs-link!= br
+
+				-counter++
+
+
+
+
+mixin newsListWrapper( isList, className )
+	-if( isList == true )
+		ul(class="#{className}")
+			block
+	-else
+		div(class="#{className}")
+			block
+mixin newsListWrapperItem( listItems, className)
+	-if( listItems == true )
+		li(class="#{className}-item").clearfix
+			block
+	-else
+		div(class="#{className}-item").clearfix
+			block
+mixin wrapInLink( options )
+	-if( options.isLink == true )
+		a( class="#{ options.linkClassName ? options.linkClassName : '' }" href="#{ parseItem.link( options ) }")
+			block
+	-else
+		span( class="#{ options.nolinkClassName ? options.nolinkClassName : '' }" )
+			block
+mixin newsItem( options )
+	div( class="#{ options.class }" )
+		-if( options.image )
+			-if (options.titleLink)
+				a(href="#", class="#{ options.class }-imageWrapper" )
+					img(src="#{ options.image }", alt="" class="#{options.class}-image")
+			-else
+				div( class="#{ options.class }-imageWrapper" )
+					img(src="#{ options.image }", alt="" class="#{options.class}-image")
+		-if( options.title )
+			+wrapInLink( {isLink: options.titleLink, linkClassName: options.class + '-title_link', nolinkClassName: options.class + '-title' } )
+			!= options.title
+			div( class="#{ options.class }-text" )
+			block
+//- возможность добавления кнопки, ссылки всего текста или только заголовка, возможность прдставляения списком или дивами
+mixin newsItemList( options )
+	-each elem,index in options.items
+		+newsListWrapperItem( options.listItems, options.class )
+			-if (elem.image)
+				a(href="#{elem.href}", class="#{options.class}-ctn")
+					img(src="images/#{elem.image}", alt="", class="#{options.class}-image")
+			-else
+				a(href="#{elem.href}", class="#{options.class}-ctn")
+					img(src="images/no_image.png", alt="", class="#{options.class}-image")
+			div(class="#{options.class}-desc")
+				-if (elem.date && visibleDate == true)
+					p(class="#{options.class}-date")=elem.date
+				-if (options.linkAll)
+					-if (elem.title || elem.desc)
+						+wrapInCtn(['<a href="' + elem.href + '">', '</a>'])
+							span(class="#{options.class}-title")!= elem.title
+							br
+							div(class="#{options.class}-text")!= elem.desc
+				-else
+					-if (elem.title)
+						p
+							a(href="#{elem.href}", class="#{options.class}-title")= elem.title
+					-if (elem.desc)
+						p!=elem.desc
+				- if (options.buttonDetail)
+					a(href="#{elem.href}", class="#{options.class}-detail")=options.buttonDetail.text ? options.buttonDetail.text : 'Подробнее'
+mixin newsList( options )
+	+newsListWrapper( options.listItems, options.class )
+		+newsItemList(options)
+
+
+mixin adress-block( options )
+	.adress-block
+		.adress-block_title(class="#{ options.title_class ? options.title_class : '' }")!= options.title
+		.adress-block_metro(class="#{ options.metro_color }")!= options.metro
+		.adress-block_adress
+			a(href="#").adress-block_adress-link!= options.adress
+		.adress-block_info!= options.info
+		.adress-block_map
+			a(href="#{ options.map ? options.map : '#' }").adress-block_map-link на карте
+
+
+mixin captcha()
+	.captcha
+		.captcha-block_image
+			img(src="./images/example/captcha.jpg", alt="").captcha-image
+		.captcha-block_label
+			span.captcha-label
+				| Введите код,
+				br
+				| указанный на картинке
+		.captcha-block_input
+			input(type="text", name="").captcha-input

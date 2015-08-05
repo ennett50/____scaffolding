@@ -1,0 +1,121 @@
+
+mixin menu-footer(className, title, ...items)
+	div(class="#{className}_title")= title
+	ul(class="#{className}_ctn").list-unstyled
+		each item in items
+			li(class="#{className}_item")
+				if (currentPageTitle == item)
+					span(class="#{className}_link")= item
+				else
+					a(href="#", class="#{className}_link")=item
+
+
+
+
+
+
+
+mixin submenu(...items)
+	ul(class="main-menu-sub-container")
+		each item in items
+			li(class="main-menu-sub-item")
+				-if( isCurrentLink( item ) )
+					span(class="main-menu-sub-link current")= item
+				-else
+					a(href="#", class="main-menu-sub-link")= item
+
+
+mixin dottedText( leftText, rightText )
+	.dottedText
+		.dottedText-left
+			span.dottedTextWrapper!= leftText
+
+		.dottedText-right
+			span.dottedTextWrapper!= rightText
+
+
+mixin sliderList(title, params)
+	if (!params)
+		-params = {}
+	if (!params.attr)
+		-params.attr = {}
+
+	div.slider-list.group-box.__dashed(class="#{ params.class ? params.class : '' }")
+		div.title-3= title
+
+		-if(params.showtabs == true)
+			.slider-list_tabs
+				img(src="./images/expert-selection.png", alt="" id="expert").__active
+				a(href="#slider-1" data-tab="sliders" ).slider-list_tab.__current
+					span NB Выбор эксперта
+				a(href="#slider-2" data-tab="sliders" ).slider-list_tab
+					span Клавиатуры
+				a(href="#slider-3" data-tab="sliders" ).slider-list_tab
+					span USB Flash накопители
+
+			-for(var k = 1; k < 4; k++)
+				div(id="slider-#{ k }" class="#{ k == 1 ? '__current' : '' }").slider-list_page
+					ul.list-unstyled.js-slider-items&attributes( params.attr )
+						- for (var x = 0; x < k*3; x++)
+							//- each item, index in listProduct
+							-for(var i = k - 1; i < listProduct.length; i++)
+								-item = listProduct[i]
+								-index = i
+								li.catalog-items_item
+									div.labels
+										if (item.dayProduct)
+											div.label.__day-product Товар дня!
+										if (item.sale)
+											div.label.__sale Скидка!
+										if (item.new)
+											div.label.__new Новинка!
+										if (item.superPrice)
+											div.label.__super-price Суперцена!
+										if (item.hit)
+											div.label.__hit Хит!
+										if (item.online)
+											div.label.__online Только онлайн!
+
+									a(href="#").catalog-items_block
+										div.catalog-items_img
+											if (item.img)
+												img(src="images/example/#{item.img}", alt="", title="")
+											else
+												img(src="images/default.png", alt="", title="")
+										span.catalog-items_link= item.title
+									div.catalog-items_price
+										div.catalog-items_old-price= item.oldPrice
+										div.catalog-items_new-price #{item.price} <span class="rub"></span>
+									a(href="#").button В корзину
+		-else
+			ul.list-unstyled.js-slider-items&attributes( params.attr )
+				- for (var x = 0; x < 2; x++)
+					each item, index in listProduct
+						li.catalog-items_item
+							div.labels
+								if (item.dayProduct)
+									div.label.__day-product Товар дня!
+								if (item.sale)
+									div.label.__sale Скидка!
+								if (item.new)
+									div.label.__new Новинка!
+								if (item.superPrice)
+									div.label.__super-price Суперцена!
+								if (item.hit)
+									div.label.__hit Хит!
+								if (item.online)
+									div.label.__online Только онлайн!
+
+							a(href="#").catalog-items_block
+								div.catalog-items_img
+									if (item.img)
+										img(src="images/example/#{item.img}", alt="", title="")
+									else
+										img(src="images/default.png", alt="", title="")
+								span.catalog-items_link= item.title
+							div.catalog-items_price
+								div.catalog-items_old-price= item.oldPrice
+								div.catalog-items_new-price #{item.price} <span class="rub"></span>
+							a(href="#").button В корзину
+
+include _customMixin

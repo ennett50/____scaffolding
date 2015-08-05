@@ -1,0 +1,185 @@
+content-center(w = 100%, h = w, important = false )
+	important = (important == true ? !important : )
+	position relative
+	width w important
+	height h important
+
+	> *
+		position absolute
+		top 0 important
+		bottom 0 important
+		left 0 important
+		right 0 important
+		margin auto important
+		max-height 100%
+		max-width 100%
+size(w, h = w)
+	width w
+	height h
+	
+border-box()
+	box-sizing padding-box
+	box-sizing border-box
+	
+background-clip()
+	background-clip padding-box
+
+
+// in css -> images("test.png")
+images(file)
+	url( $img_path + file )
+	
+trans()
+	transition all 0.3s
+
+trans-none()
+	transition all 0s
+clear()
+	&:after
+		content ''
+		display table
+		clear both
+
+// in css -> columns(5)
+columns(count)
+	.column-{count}
+		width floor( (95% / count), 1 )
+		display inline-block
+		vertical-align top
+
+// in css -> width-perc(15)
+width-perc(perc)
+	.perc-{perc}
+		width: (perc)%
+		
+anim-link(type = $type_anim_link)
+	position relative
+	text-decoration none !important
+	overflow hidden
+	
+	if( type == 1)
+		&:after
+			content ''
+			display block
+			position absolute
+			bottom 0
+			left 0
+			size(100%, 0)
+			max-width 100%
+			border-bottom 1px solid
+			trans()
+			
+		&:hover
+			&:after
+				size(0)
+		
+	if (type == 2)
+		&:after,
+		&:before
+			content ''
+			display block
+			position absolute
+			bottom 0
+			size(50%, 0)
+			max-width 50%
+			border-bottom 1px solid
+			trans()
+		&:after
+			right 0
+		&:before
+			left 0
+			
+		&:hover
+			text-decoration none
+			&:after,
+			&:before
+				size(0)
+	
+	if( type == 3)
+		&:after
+			content ''
+			display block
+			position absolute
+			bottom 0
+			left 0
+			right 0
+			margin auto
+			size(100%, 0)
+			max-width 100%
+			border-bottom 1px solid
+			trans()
+			
+		&:hover
+			&:after
+				size(0)
+
+// in css -> blur(20)
+blur(px)
+	filter unquote('progid:DXImageTransform.Microsoft.Blur(PixelRadius="' + px + '")')
+	-webkit-filter unquote('blur(' + px + 'px)')
+	-o-filter unquote('blur(' + px + 'px)')
+	-ms-filter unquote('blur(' + px + 'px)')
+	-moz-filter unquote('blur(' + px + 'px)')
+	filter unquote('blur(' + px + 'px)')
+
+// in css -> opacity(0.2) or  opacity(20)
+opacity(val)
+	if val > 1
+		val = val/100
+	opacity val
+	zoom 1
+	-ms-filter unquote('progid:DXImageTransform.Microsoft.Alpha(Opacity="' + val*100 + '")')
+
+
+
+Buttons()
+	[type="submit"],
+	[type="button"],
+	[type="reset"],
+	button
+		{block}
+
+TextInputs()
+	[type="text"],
+	main select,
+	main textarea,
+	[type="password"], [type="date"],
+	[type="datetine"], [type="email"],
+	[type="number"], [type="search"],
+	[type="time"], [type="tel"],
+	[type="month"], [type="week"]
+		{block}
+
+
+Inputs()
+	[type="submit"],
+	[type="button"],
+	[type="reset"],
+	main button,
+	[type="text"],
+	main select,
+	main textarea,
+	[type="password"], [type="date"],
+	[type="datetine"], [type="email"],
+	[type="number"], [type="search"],
+	[type="time"], [type="tel"],
+	[type="month"], [type="week"]
+		{block}
+
+this( element = false )
+	return selector() + ( element ? ' ' + element : '' )
+	
+negativeExpand(howMuch)
+	margin-left (- howMuch)
+	margin-right (- howMuch)
+	padding-left howMuch
+	padding-right howMuch
+
+gr(bg1, bg2)
+	background bg1
+	background unquote("-moz-linear-gradient(top,  " + bg1 + " 0%, " + bg2 + " 100%)")
+	background unquote("-webkit-gradient(linear, left top, left bottom, color-stop(0%," + bg1 + "), color-stop(100%," + bg2 + "))")
+	background unquote("-webkit-linear-gradient(top,  " + bg1 + " 0%," + bg2 + " 100%)")
+	background unquote("-o-linear-gradient(top,  " + bg1 + " 0%," + bg2 + " 100%)")
+	background unquote("-ms-linear-gradient(top,  " + bg1 + " 0%," + bg2 + " 100%)")
+	background unquote("linear-gradient(to bottom,  " + bg1 + " 0%," + bg2 + " 100%)")

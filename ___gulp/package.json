@@ -1,0 +1,30 @@
+{
+  "name": "scaffolding-frontend",
+  "version": "0.0.1",
+  "author": "ennet",
+  "license": "ISC",
+  "private": true,
+  "description": "Fast start frontend apps",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "dependencies": {
+    "browser-sync": "^2.2.3",
+    "gulp-rigger": "^0.5.8",
+    "gulp": "^3.8.11",
+    "gulp-autoprefixer": "^2.1.0",
+    "gulp-minify-css": "^1.0.0",
+    "gulp-sourcemaps": "^1.5.0",
+    "gulp-prettify": "^0.3.0",
+    "gulp-uglify": "^1.1.0",
+    "gulp-concat": "^2.4.1",
+    "gulp-jade": "latest",
+    "gulp-rename": "^1.2.0",
+    "gulp-stylus": "^1.3.3",
+    "clarify" :  "latest",
+    "rimraf": "^2.3.1",
+    "browser-sync-client": "^1.0.1",
+    "gulp-stylus": "^1.3.3"
+  }
+}
