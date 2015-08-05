@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body, html{
+    height: 100%;
+}
+body {
+    padding: 40px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 18px;
+    color: #363636;
+    width: 940px;
+    margin: 0 auto;
+}
+.content {
+    position: relative;
+    height: 100%;
+}
+/* стили для текстового блока
+========================================================================== */
+h1 {
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    line-height: normal;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+}
+h2 {
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    line-height: normal;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+h3 {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: normal;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+.block-text {
+    font-size: 14px;
+    margin-bottom: 40px;
+    position: relative;
+    line-height: 20px;
+}
+.block-text p, .block-text ul, .block-text ol, .block-text img {
+    margin-bottom: 18px;
+}  
+.block-text img{
+    max-width: 100%;
+}
+.block-text ul li {
+    margin-left: 18px;
+    margin-bottom: 10px;
+    list-style: disc;
+    float: none;
+}
+.block-text ol li {
+    margin-left: 23px;
+    margin-bottom: 10px;
+    list-style: decimal;
+    float: none;
+}
+.block-text li a {
+    padding: 0;
+}
+.block-text table {
+    position: relative;
+    margin-bottom: 15px;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.block-text table th {
+    font-weight: bold;  
+    text-align: left;
+    background: #eee;
+}
+.block-text table a {
+    font-weight: bold;
+}
+
+.block-text table th,.block-text table td {
+    padding: 8px 10px;
+    border: 1px solid #dedede;
+}
+.block-text .bottom_img_text {
+    position: absolute;
+    bottom: 0;
+    right: -266px;
+}
+
+.block-text a {
+    text-decoration: underline;
+}
+.block-text a:hover {
+    text-decoration: none;
+}
+/* layout
+========================================================================== */
+.right {
+    float: right;
+    top: 20px;
+    position: relative;
+    text-align: right;
+}
+.left{
+    float: left;
+}
+.clear{
+    clear: both;
+    display: block;
+}
+header{
+    margin-bottom: 35px;
+    position: relative;
+}
+a {
+    color: #d92819;
+}
+a:hover {
+    opacity: 0.9;
+}
+table a {
+    color: #333;
+}

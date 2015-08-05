@@ -1,0 +1,37 @@
+doctype
+html
+	head
+		title Макеты верстки Granat
+		meta(http-equiv="Content-Type", content="text/html; charset=UTF-8")
+		link(rel="icon", href="./_index/favicon.png", type="image/x-icon")
+		link(rel="stylesheet", type="text/css", href="./_index/style.css")
+
+		//if lt IE 9
+			<script>
+				document.createElement('header');
+				document.createElement('nav');
+				document.createElement('section');
+				document.createElement('article');
+				document.createElement('aside');
+				document.createElement('footer');
+			</script>
+
+	body
+		header
+			a(href="http://granat-adv.ru/", target="_blank", class="left")
+				img(src="_index/new-granat-logo.png", alt="granat-adv.ru")
+			.right Сочный креатив - рекламное агентство «Гранат»
+				br
+				a(href="http://granat-adv.ru/kontakty", target="_blank") Контактная информация
+			.clear
+		section
+			.block-text
+				table
+					tr
+						th(width="30%") Ссылка
+						th Название страницы
+					each page in locals.pages
+						tr
+							td
+								a(href="#{page.file}.html", target="_blank") #{page.file}.html
+							td #{page.name}

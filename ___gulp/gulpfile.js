@@ -26,6 +26,19 @@ var showErr = function(err) {
     return this.emit('end');
 };
 
+var getDesc = function(txt) {
+    var dict, key, value;
+    dict = fs.readFileSync('./dictionary.json', 'utf-8');
+    dict = JSON.parse(dict);
+    for (key in dict) {
+        value = dict[key];
+        if (key === txt) {
+            return value;
+        }
+    }
+    return txt;
+};
+
 var path = {
     web: {
         html: '../web/',
@@ -52,7 +65,8 @@ var path = {
         styleVendors:  '../__dev/styles/vendors/*.css',
 
         img: '../__dev/images/**/*.*',
-        fonts: '../__dev/fonts/**/*.*'
+        fonts: '../__dev/fonts/**/*.*',
+        index : '../__dev/_index/index.jade'
     },
     watch: {
         html: '../__dev/views/**/*.jade',
@@ -73,7 +87,9 @@ var path = {
 
         img: '../__dev/images/**/**/*.*',
 
-        fonts: '../__dev/fonts/**/*.*'
+        fonts: '../__dev/fonts/**/*.*',
+
+        index : '../__dev/_index/index.jade'
     },
     clean: '../web'
 };
@@ -97,6 +113,37 @@ gulp.task('html:dev', function () {
         .pipe(prettify({indent_size: 1, indent_char: '\t'}))
         .pipe(gulp.dest(path.web.html))
         .pipe(reload({stream: true}));
+    gulp.start('html:index');
+});
+
+gulp.task('html:index', function () {
+    dirs = fs.readdirSync('../web/');
+    files = [];
+    for (i = 0, len = dirs.length; i < len; i++){
+        var file = dirs[i];
+        if (file.indexOf('.html') + 1 && !(file.indexOf('index') + 1)) {
+            files.push({
+                file: file.replace('.html', ''),
+                name: getDesc(file)
+            });
+
+        }
+    }
+
+    gulp.src(path.src.index)
+        .pipe(jade({pretty: true, locals: {'pages': files}}))
+        .on('error', showErr)
+        .pipe(gulp.dest(path.web.html))
+        .pipe(reload({stream: true}));
+
+    gulp.src('../__dev/_index/*')
+        .pipe(gulp.dest('../web/_index/'));
+
+
+    console.log(files)
+
+
+
 });
 
 gulp.task('js:devProduction', function () {
@@ -190,7 +237,8 @@ gulp.task('dev', [
     'css:styleProduction',
     'css:styleBase',
     'css:styleVendors',
-    'img:dev'
+    'img:dev',
+    'html:index'
   //  'fonts:dev'
 ]);
 
@@ -217,6 +265,10 @@ gulp.task('watch', function(){
     watch(path.watch.img, function(event, cb) {
         gulp.start('img:dev');
     });
+    watch(path.watch.index, function(event, cb) {
+        gulp.start('html:index');
+    });
+
 
 
 });
