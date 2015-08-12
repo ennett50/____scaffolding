@@ -1,37 +1,6 @@
-.icon
-	display inline-block
-	background-repeat no-repeat
-	&.__middle
-		vertical-align middle
-	&.__grey-close
-		width 8px
-		height 7px
-		background images("icons/grey-close.png")
-	&.__grey-down
-		width 8px
-		height 4px
-		background images("icons/grey-down.png") 0 0
-		&:hover
-			background-position 0 -5px		
-	&.__grey-up
-		width 8px
-		height 4px
-		background images("icons/grey-up.png")
-		&:hover
-			background-position 0 -5px
-	&.__visa
-		width 39px
-		height 23px
-		background images("icons/visa.png")
-	&.__mastercard
-		width 42px
-		height 24px
-		background images("icons/mastercard.png")
-	&.__yamoney
-		width 55px
-		height 23px
-		background images("icons/yamoney.png")
-	&.__kiwi
-		width 20px
-		height 33px
-		background images("icons/kiwi.png")
+.icon-basket
+	position relative
+	sprite($s-phone);
+	&:hover
+		sprite($s-phone-2x);
+

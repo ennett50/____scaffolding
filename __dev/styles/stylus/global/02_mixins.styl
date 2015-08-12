@@ -183,3 +183,24 @@ gr(bg1, bg2)
 	background unquote("-o-linear-gradient(top,  " + bg1 + " 0%," + bg2 + " 100%)")
 	background unquote("-ms-linear-gradient(top,  " + bg1 + " 0%," + bg2 + " 100%)")
 	background unquote("linear-gradient(to bottom,  " + bg1 + " 0%," + bg2 + " 100%)")
+
+// sprite mixin
+
+spriteWidth($sprite)
+	width $sprite[4]
+
+spriteHeight($sprite)
+	height $sprite[5]
+
+spritePosition($sprite)
+	background-position $sprite[2] $sprite[3]
+
+spriteImage($sprite)
+	background-image url(../images/$sprite[8])
+
+sprite($sprite)
+	if !match('hover', selector()) && !match('active', selector())
+		spriteImage($sprite)
+	spritePosition($sprite)
+	spriteWidth($sprite)
+	spriteHeight($sprite)

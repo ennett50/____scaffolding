@@ -17,6 +17,13 @@ var gulp = require('gulp'),
     clarify = require('clarify'),
     pathR =  require('path');
 
+
+var spritesmith = require("gulp.spritesmith");
+var jsdoc = require("gulp-jsdoc");
+
+
+
+
 if (!fs.existsSync('../web/')){
     fs.mkdirSync('../web/');
 }
@@ -55,8 +62,8 @@ var path = {
 
         styleProduction : [
             '../__dev/styles/stylus/**/*.styl',
-            '!../__dev/styles/stylus/base/*.styl',
-            '!../__dev/styles/stylus/global/*.styl'
+            '!../__dev/styles/stylus/base/*.styl'
+
         ],
         styleBase : [
             '../__dev/styles/stylus/base/*.styl',
@@ -66,7 +73,8 @@ var path = {
 
         img: '../__dev/images/**/*.*',
         fonts: '../__dev/fonts/**/*.*',
-        index : '../__dev/_index/index.jade'
+        index : '../__dev/_index/index.jade',
+        stylSprite : '../__dev/styles/stylus/global/'
     },
     watch: {
         html: '../__dev/views/**/*.jade',
@@ -89,7 +97,8 @@ var path = {
 
         fonts: '../__dev/fonts/**/*.*',
 
-        index : '../__dev/_index/index.jade'
+        index : '../__dev/_index/index.jade',
+        sprite : '../__dev/sprite/**/*.*'
     },
     clean: '../web'
 };
@@ -99,11 +108,12 @@ var config = {
     server: {
         baseDir: "../web"
     },
-   // tunnel: true,
+    // tunnel: true,
     host: 'localhost',
     port: 3000,
     logPrefix: "frontend"
 };
+
 
 
 gulp.task('html:dev', function () {
@@ -140,14 +150,16 @@ gulp.task('html:index', function () {
         .pipe(gulp.dest('../web/_index/'));
 
 
-    console.log(files)
-
-
-
 });
+gulp.task('js:Doc', function () {
+    gulp.src(path.src.jsProduction)
+        .pipe(jsdoc('../web/___documentation-jsDOC'));
+});
+
 
 gulp.task('js:devProduction', function () {
     gulp.src(path.src.jsProduction)
+        .on('error', showErr)
         .pipe(rigger())
         .on('error', showErr)
         .pipe(sourcemaps.init())
@@ -159,6 +171,7 @@ gulp.task('js:devProduction', function () {
         .on('error', showErr)
         .pipe(gulp.dest(path.web.js))
         .pipe(reload({stream: true}));
+    //gulp.start('js:Doc');
 });
 gulp.task('js:devBase', function () {
     gulp.src(path.src.jsBase)
@@ -170,9 +183,7 @@ gulp.task('js:devVendors', function () {
     gulp.src(path.src.jsVendors)
         .pipe(concat('vendors.js'))
         .on('error', showErr)
-        .pipe(uglify({
-            preserveComments: 'some'
-        }))
+        .pipe(uglify())
         .pipe(gulp.dest(path.web.js))
         .pipe(reload({stream: true}));
 });
@@ -191,6 +202,7 @@ gulp.task('css:styleProduction', function () {
         .pipe(prefixer({
             browsers: ['last 20 version']
         }))
+        .on('error', showErr)
         .pipe(rename('production.css'))
         .on('error', showErr)
         .pipe(gulp.dest(path.web.css))
@@ -207,6 +219,7 @@ gulp.task('css:styleBase', function () {
         .pipe(prefixer({
             browsers: ['last 20 version']
         }))
+        .on('error', showErr)
         .pipe(rename('00_base.css'))
         .pipe(gulp.dest('../__dev/styles/vendors/'));
 });
@@ -228,6 +241,29 @@ gulp.task('img:dev', function () {
         .pipe(gulp.dest(path.web.img))
         .pipe(reload({stream: true}));
 });
+gulp.task('fonts:dev', function() {
+    gulp.src(path.src.fonts)
+        .pipe(gulp.dest(path.web.fonts))
+});
+gulp.task('sprite:dev', function() {
+    var spriteData =
+        gulp.src('../__dev/sprite/*.*') // путь, откуда берем картинки для спрайта
+            .pipe(spritesmith({
+                imgName: 'sprite.png',
+                cssName: 'sprite.styl',
+                cssFormat: 'stylus',
+                imgPath: 'sprite.png',
+                algorithm: 'binary-tree',
+                cssTemplate: 'stylus.template.mustache',
+                cssVarMap: function(sprite) {
+                    sprite.name = 's-' + sprite.name
+                }
+            }));
+
+    spriteData.img.pipe(gulp.dest(path.web.img)); // путь, куда сохраняем картинку
+    spriteData.css.pipe(gulp.dest(path.src.stylSprite)); // путь, куда сохраняем стили
+    spriteData.pipe(reload({stream: true}));
+});
 
 gulp.task('dev', [
     'html:dev',
@@ -238,8 +274,9 @@ gulp.task('dev', [
     'css:styleBase',
     'css:styleVendors',
     'img:dev',
-    'html:index'
-  //  'fonts:dev'
+    'html:index',
+    'fonts:dev',
+    'sprite:dev'
 ]);
 
 
@@ -268,7 +305,12 @@ gulp.task('watch', function(){
     watch(path.watch.index, function(event, cb) {
         gulp.start('html:index');
     });
-
+    watch([path.watch.fonts], function(event, cb) {
+        gulp.start('fonts:dev');
+    });
+    watch([path.watch.sprite], function(event, cb) {
+        gulp.start('sprite:dev');
+    });
 
 
 });
