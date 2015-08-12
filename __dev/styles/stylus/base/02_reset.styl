@@ -4,79 +4,48 @@ html, body
 	border 0
 	font inherit
 	vertical-align baseline
-main
-	display block
-	// div, span, applet, object, iframe,
-	// h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-	// a, abbr, acronym, address, big, cite, code,
-	// del, dfn, em, img, ins, kbd, q, s, samp,
-	// small, strike,  sub, sup, tt, var,
-	// u, i, center,
-	// dl, dt, dd, ol, ul, li,
-	// fieldset, form, label, legend,
-	// table, caption, tbody, tfoot, thead, tr, th, td,
-	// article, aside, canvas, details, embed,
-	// figure, figcaption, footer, header, hgroup,
-	// menu, nav, output, ruby, section, summary,
-	// time, mark, audio, video
-	// 	margin 0
-	// 	padding 0
-	// 	border 0
-	// 	font inherit
-	// 	vertical-align baseline
 
-	article, aside, details, figcaption, figure,
-	footer, header, hgroup, menu, nav, section
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section
 		display block
 
-body
-	line-height 1
+blockquote, q
+	quotes none
 
-main
-	// ol, ul
-	// 	list-style none
+blockquote:before, blockquote:after,
+q:before, q:after
+	content none
 
-	blockquote, q
-		quotes none
+table
+	border-collapse collapse
+	border-spacing 0
 
-	blockquote:before, blockquote:after,
-	q:before, q:after
-		content none
+*:focus
+	outline 0
 
-	table
-		border-collapse collapse
-		border-spacing 0
-	
-	*:focus
-		outline 0
+ins
+	text-decoration none
 
-	ins
-		text-decoration none
-
-	nav
-		ul,li
-			padding 0
-			margin 0
-			list-style none
-
-
-	input,
-	button,
-	textarea
+nav
+	ul,li
 		padding 0
 		margin 0
-		outline 0
-		border 0
-		display inline-block
-		background transparent
-		-webkit-border-radius 0px
-		border-box()
-	// *
-	// 	font inherit
-	// 	color inherit
+		list-style none
 
-	textarea
-		resize none
+
+input,
+button,
+textarea
+	padding 0
+	margin 0
+	outline 0
+	border 0
+	display inline-block
+	background transparent
+	border-box()
+
+textarea
+	resize vertical
 	
-+Buttons()
-	-webkit-appearance none
+*
+	font inherit
+	color inherit

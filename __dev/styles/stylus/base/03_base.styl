@@ -1,3 +1,10 @@
+base-font()
+	font-family Arial, Verdana, sans-serif
+	font-size 14px
+	color #000
+	line-height: 22px;
+
+
 html
 	size(100%, 100%)
 html
@@ -6,21 +13,11 @@ html
 body
 	base-font()
 	min-height 100%
-	if $wrapper_min_width > 0px
-		min-width $wrapper_min_width + ($wrapper_padding*2)
-	else
-		if $wrapper_width > 0px
-			min-width $wrapper_width + ($wrapper_padding*2)
 
 .wrapper-content
-	if $wrapper_max_width > 0px
-		max-width $wrapper_max_width
-	if $wrapper_min_width > 0px
-		min-width $wrapper_min_width
-	if $wrapper_width > 0px
-		width $wrapper_width
+	width 990px;
 	margin 0 auto
-	padding 0 $wrapper_padding
+	padding 0 10px
 	
 .block
 	display block !important
@@ -43,20 +40,7 @@ body
 	&-column,
 	&-columns
 		display table-column
-main
-// 	b, strong
-// 		font-weight 700
 
-// 	i
-// 		font-style italic
-
-// 	a
-// 		text-decoration underline
-// 		color #001f45
-// 		&:hover
-// 			text-decoration none
-	img
-		max-width 100%
 
 .content-center
 	content-center(100%)
@@ -141,3 +125,11 @@ for $j in 1..100
 		else
 			width $j + '%'  !important
 			
+a
+	trans()
+	text-decoration underline
+	&:hover
+		text-decoration none
+
+.hidden
+	display none

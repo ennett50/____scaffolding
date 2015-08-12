@@ -5,14 +5,11 @@ doctype html
 html(lang="ru").no-js
 	include includes/head.jade
 	body
-		include includes/header.jade
+		include includes/header
 		div.container
 			block block-content
 
-		p test qweee1
 
+		include includes/footer
 
-		include includes/footer.jade
-
-			//- .pops.js-pops
-			//- include ../modules/pops.jade
+		include ../modules/popups.jade

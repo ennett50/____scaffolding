@@ -74,6 +74,7 @@ var path = {
         img: '../__dev/images/**/*.*',
         fonts: '../__dev/fonts/**/*.*',
         index : '../__dev/_index/index.jade',
+        spriteRetina: '../__dev/sprite/',
         stylSprite : '../__dev/styles/stylus/global/'
     },
     watch: {
@@ -187,28 +188,6 @@ gulp.task('js:devVendors', function () {
         .pipe(gulp.dest(path.web.js))
         .pipe(reload({stream: true}));
 });
-
-
-gulp.task('css:styleProduction', function () {
-    gulp.src(path.src.styleProduction)
-        .pipe(concat('00_production.styl'))
-        .on('error', showErr)
-        .pipe(sourcemaps.init())
-        .pipe(stylus({
-            compress: true
-        }))
-        .on('error', showErr)
-        .pipe(sourcemaps.write())
-        .pipe(prefixer({
-            browsers: ['last 20 version']
-        }))
-        .on('error', showErr)
-        .pipe(rename('production.css'))
-        .on('error', showErr)
-        .pipe(gulp.dest(path.web.css))
-        .pipe(reload({stream: true}));
-});
-
 gulp.task('css:styleBase', function () {
     gulp.src(path.src.styleBase)
         .pipe(concat('00_base.styl'))
@@ -236,6 +215,28 @@ gulp.task('css:styleVendors', function () {
         .pipe(reload({stream: true}));
 });
 
+gulp.task('css:styleProduction', function () {
+    gulp.src(path.src.styleProduction)
+        .pipe(concat('00_production.styl'))
+        .on('error', showErr)
+        .pipe(sourcemaps.init())
+        .pipe(stylus({
+            compress: true
+        }))
+        .on('error', showErr)
+        .pipe(sourcemaps.write())
+        .pipe(prefixer({
+            browsers: ['last 20 version']
+        }))
+        .on('error', showErr)
+        .pipe(rename('production.css'))
+        .on('error', showErr)
+        .pipe(gulp.dest(path.web.css))
+        .pipe(reload({stream: true}));
+});
+
+
+
 gulp.task('img:dev', function () {
     gulp.src(path.src.img)
         .pipe(gulp.dest(path.web.img))
@@ -253,6 +254,11 @@ gulp.task('sprite:dev', function() {
                 cssName: 'sprite.styl',
                 cssFormat: 'stylus',
                 imgPath: 'sprite.png',
+
+                //retinaSrcFilter: [path.src.spriteRetina + '*-2x.png'],
+               // retinaImgName: 'sprite-2x.png',
+              //  retinaImgPath: 'sprite-2x.png',
+
                 algorithm: 'binary-tree',
                 cssTemplate: 'stylus.template.mustache',
                 cssVarMap: function(sprite) {
@@ -270,9 +276,9 @@ gulp.task('dev', [
     'js:devProduction',
     'js:devBase',
     'js:devVendors',
-    'css:styleProduction',
     'css:styleBase',
     'css:styleVendors',
+    'css:styleProduction',
     'img:dev',
     'html:index',
     'fonts:dev',
@@ -290,15 +296,16 @@ gulp.task('watch', function(){
     watch([path.watch.jsVendors], function(event, cb) {
         gulp.start('js:devVendors');
     });
-    watch(path.watch.styleProduction, function(event, cb) {
-        gulp.start('css:styleProduction');
-    });
     watch(path.watch.styleBase, function(event, cb) {
         gulp.start('css:styleBase');
     });
     watch(path.watch.styleVendors, function(event, cb) {
         gulp.start('css:styleVendors');
     });
+    watch(path.watch.styleProduction, function(event, cb) {
+        gulp.start('css:styleProduction');
+    });
+
     watch(path.watch.img, function(event, cb) {
         gulp.start('img:dev');
     });

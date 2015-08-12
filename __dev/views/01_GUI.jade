@@ -1,0 +1,361 @@
+extends layouts/_default
+block vars
+	-var currentPageTitle = "GUI"
+block title
+	title GUI
+block block-content
+	p
+		b Шрифт:
+	p
+		span  Museo Sans Cyrl  500 <strong>700</strong> <span class="extra-bold">900</span>
+	p
+		b Цвета:
+
+
+
+	div.row
+		div.col-md-1.p-25.mr-10(style="background:#f2d649")
+			span #f2d649
+
+		div.col-md-1.p-25.mr-10(style="background:#e68422")
+			span #e68422
+
+		div.col-md-1.p-25.mr-10(style="background:#a62c21")
+			span #a62c21
+
+		div.col-md-1.p-25.mr-10(style="background:#808080")
+			span #808080
+
+		div.col-md-1.p-25.mr-10(style="background:#d93a2b")
+			span #d93a2b
+
+		div.col-md-1.p-25.mr-10(style="background:#cccccc")
+			span #cccccc
+
+		div.col-md-1.p-25.mr-10(style="background:#f2f2f2")
+			span #f2f2f2
+
+		div.col-md-1.p-25.mr-10(style="background:#efefef")
+			span #efefef
+
+
+
+
+
+	h1 h1 Заголовок H1
+	h2 h2 Заголовок H2
+	h3 h3 Заголовок H3
+	h4 h4 Заголовок H4
+	h5 h5 Заголовок H5
+	h6 h6 Заголовок H6
+	p {Абзац} Reprehenderit minima nihil quasi sunt&nbsp;
+		a(href="#") Ссылка в тексте
+		|  eum. Rerum, repellendus sed itaque quos beatae aspernatur esse delectus numquam ea quae iste ipsum modi voluptatibus aperiam dolorum architecto nostrum suscipit maiores ipsa dolores vel. Vitae laborum, eveniet molestiae aperiam laboriosam nobis maiores placeat?
+	p {Абзац} Mollitia ab impedit necessitatibus animi fugiat quae tenetur sunt qui, neque consectetur sit, quisquam iure accusantium placeat iusto labore rerum ad, doloremque excepturi. Quo rerum maiores ipsa, aliquid expedita, id dolorem magnam sed architecto temporibus iure quisquam voluptatem itaque, sunt.
+	div.row
+		div.col-lg-6.col-md-6
+			ol
+				li
+					|  Lorem ipsum dolor sit.
+				li
+					|  Eveniet tempora odit facilis.
+				ol
+					li
+						|  Repellendus deleniti, quod aperiam.
+					li
+						|  Atque natus, voluptatem odio.
+					ol
+						li
+							|  Repellendus deleniti, quod aperiam.
+					li
+						|  Placeat inventore adipisci sed.
+				li
+					|  Ex, sapiente libero minima!
+				li
+					|  Repellat officiis iste dignissimos.
+				li
+					|  Maiores dolorum quaerat, totam.
+				li
+					|  Praesentium, voluptas quasi quae.
+				li
+					|  Repellat, veritatis aut voluptatibus.
+			br
+			div.falseLink Псевдоссылка
+			br
+			br
+			a(href="#") Ссылка
+		div.col-lg-6.col-md-6
+			ul
+				li
+					|  Lorem ipsum dolor sit amet.
+				li
+					|  Porro non nemo ipsum quam?
+				ul
+					li
+						|  Lorem ipsum dolor sit amet.
+					li
+						|  Porro non nemo ipsum quam?
+				li
+					|  Eveniet similique veritatis voluptatibus quidem.
+				li
+					|  Expedita blanditiis adipisci eos illum.
+				li
+					|  Veniam aliquam nemo obcaecati quisquam!
+	br
+	hr
+	br
+	h3 Изменения с текстом:
+	p
+		b Перечеркнутый текст:
+	p
+		s This line of text is meant to be treated as no longer accurate.
+	p
+		b Подчеркнутый текст:
+	p
+		u This line of text will render as underlined
+	p
+		b Мелкий текст:
+	p
+		small This line of text is meant to be treated as fine print
+	p
+		b Курсив:
+	p
+		em This line of text is meant to be treated as fine print
+	h3 Классы выравнивания и трансформации:
+	| <p class="text-left">{.text-left} Left aligned text.</p>
+	| <p class="text-center">{.text-center} Center aligned text.</p>
+	| <p class="text-right">{.text-right} Right aligned text.</p>
+	| <p class="text-justify">{.text-justify} Justified text.</p>
+	| <p class="text-nowrap">{.text-nowrap} No wrap text.</p>
+	| <p class="text-lowercase">{.text-lowercase} Lowercased text.</p>
+	| <p class="text-uppercase">{.text-uppercase} Uppercased text.</p>
+	| <p class="text-capitalize">{.text-capitalize} Capitalized text.</p>
+	br
+	br
+	blockquote
+		p
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante
+	br
+	| <blockquote>
+	| <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+	| <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
+	| </blockquote>
+	br
+	br
+	| <blockquote class="blockquote-reverse">
+	| <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+	| <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
+	| </blockquote>
+	br
+	br
+	hr
+	h3 Таблицы
+	table.table
+		tr
+			th #
+			th Имя
+			th Фамилия
+			th Имя пользователя
+		tr
+			th(scope='row') 1
+			td Марк
+			td Отто
+			td @mdo
+		tr
+			th(scope='row') 2
+			td  Джейкоб
+			td Торнтон
+			td @fat
+		tr
+			th(scope='row') 3
+			td Ларри
+			td Птица
+			td @twitter
+	p
+		b Ряды с полосками
+	table.table.table-striped
+		tr
+			th #
+			th Имя
+			th Фамилия
+			th Имя пользователя
+		tr
+			th(scope='row') 1
+			td Марк
+			td Отто
+			td @mdo
+		tr
+			th(scope='row') 2
+			td  Джейкоб
+			td Торнтон
+			td @fat
+		tr
+			th(scope='row') 3
+			td Ларри
+			td Птица
+			td @twitter
+	p
+		b Адаптивные таблицы (появляется прокрутка, если контент не умещается)
+	div.table-responsive
+		table.table.table-bordered
+			tr
+				th #
+				th Имя
+				th Фамилия
+				th Имя пользователя
+			tr
+				th(scope='row') 1
+				td Марк
+				td Отто
+				td @mdo
+			tr
+				th(scope='row') 2
+				td  Джейкоб
+				td Торнтон
+				td @fat
+			tr
+				th(scope='row') 3
+				td Ларри
+				td Птица
+				td @twitter
+	p
+		b Таблица с ховером при наведении курсора
+	table.table.table-hover
+		tr
+			th #
+			th Имя
+			th Фамилия
+			th Имя пользователя
+		tr
+			th(scope='row') 1
+			td Марк
+			td Отто
+			td @mdo
+		tr
+			th(scope='row') 2
+			td  Джейкоб
+			td Торнтон
+			td @fat
+		tr
+			th(scope='row') 3
+			td Ларри
+			td Птица
+			td @twitter
+	br
+	br
+	hr
+	h3 Размещение по колонкам
+	p
+		b Используем сетку бутстрапа:
+	p 2 адаптивные колонки
+	div.row
+		div.col-lg-6.col-sm-6
+			div(style="background: #CCC8C8;text-align: center;line-height: 150px;height: 150px;margin-bottom: 40px;")
+		div.col-lg-6.col-sm-6
+			div(style="background: #CCC8C8;text-align: center;line-height: 150px;height: 150px;margin-bottom: 40px;")
+	p 3 адаптивные колонки
+	div.row
+		div.col-lg-4.col-sm-4
+			div(style="background: #CCC8C8;text-align: center;line-height: 150px;height: 150px;margin-bottom: 40px;")
+		div.col-lg-4.col-sm-4
+			div(style="background: #CCC8C8;text-align: center;line-height: 150px;height: 150px;margin-bottom: 40px;")
+		div.col-lg-4.col-sm-4
+			div(style="background: #CCC8C8;text-align: center;line-height: 150px;height: 150px;margin-bottom: 40px;")
+	p 4 адаптивные колонки
+	div.row
+		div.col-lg-3.col-sm-3
+			div(style="background: #CCC8C8;text-align: center;line-height: 150px;height: 150px;margin-bottom: 40px;")
+		div.col-lg-3.col-sm-3
+			div(style="background: #CCC8C8;text-align: center;line-height: 150px;height: 150px;margin-bottom: 40px;")
+		div.col-lg-3.col-sm-3
+			div(style="background: #CCC8C8;text-align: center;line-height: 150px;height: 150px;margin-bottom: 40px;")
+		div.col-lg-3.col-sm-3
+			div(style="background: #CCC8C8;text-align: center;line-height: 150px;height: 150px;margin-bottom: 40px;")
+	br
+	br
+	hr
+	h3 Элементы форм
+	p Кнопки (также аналогично к ссылкам и к button):
+	div(style="background:#F7F6F6;padding: 20px;border-radius: 5px;")
+		div.row
+			div.col-lg-4.text-center
+				div.button Стнадартная кнопка
+				br
+			div.col-lg-4.text-center
+				div.button.__hover Кнопка при hover
+				br
+			div.col-lg-4.text-center
+				div.button.__focus Кнопка при нажатии
+				br
+
+	br
+	br
+	br
+	form.form-horizontal
+		.form-group
+			label.col-sm-2.control-label(for='inputEmail3') Email
+			.col-sm-10
+				input#inputEmail3.form-control(type='email', placeholder='Email')
+		.form-group
+			label.col-sm-2.control-label(for='inputPassword3') Password
+			.col-sm-10
+				input#inputPassword3.form-control(type='password', placeholder='Password')
+		.form-group
+			.col-sm-offset-2.col-sm-10
+				.checkbox
+					label
+						input(type='checkbox', value='')
+						|     Option one is this and that—be sure to include why it's great
+				.checkbox.disabled
+					label
+						input(type='checkbox', value='', disabled='')
+						|     Option two is disabled
+
+		.form-group
+			.col-sm-offset-2.col-sm-10
+				.radio
+					label
+						input#optionsRadios1(type='radio', name='optionsRadios', value='option1', checked='')
+						|     Option one is this and that—be sure to include why it's great
+				.radio
+					label
+						input#optionsRadios2(type='radio', name='optionsRadios', value='option2')
+						|     Option two can be something else and selecting it will deselect option one
+				.radio.disabled
+					label
+						input#optionsRadios3(type='radio', name='optionsRadios', value='option3', disabled='')
+						|     Option three is disabled
+
+		.form-group
+			.col-sm-offset-2.col-sm-10
+				button.button(type='submit') Sign in
+	br
+	br
+	hr
+
+
+
+	h3 Часто встречающиеся элементы на сайте
+	p Хлебные крошки
+	+breadcrumbsSimple(['Бытовая техника', 'Холодильник Bosch KGN 36VL10 Indesit BIA 18 S Indesit BIA 18 S'], '/')
+	br
+	br
+	p Пагинатор:
+	+pagination([1,2,3,4], true)
+	br
+	br
+	br
+
+
+	p Модальные окна
+	button.button(data-toggle="modal" data-target="#js-default-popup") Показать стандартное модальное окно
+	br
+	br
+
+
+	//p Просмотр большой картинки(fancybox)
+	//p
+	//	a(href="https://avatars0.githubusercontent.com/u/11675989?v=3&s=460g").js-fancybox
+	//		img(src='https://avatars0.githubusercontent.com/u/11675989?v=3&s=460', alt='')
+	//br
+	//br

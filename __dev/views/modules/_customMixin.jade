@@ -60,17 +60,22 @@ mixin pagination( arr, showPrevNext )
 	div.pagination
 		-var isFirst = true
 		-if(showPrevNext == true)
-			span.pagination-prev.__disabled
-			each br in arr
-				-if(isFirst)
-					-isFirst = false
-					span.pagination-link.__current!= br
-				-else if ( br == ". . ")
-					span.pagination-empty!= br
-				-else
-					a(href="#").pagination-link!= br
+			span.pagination-prev.__disabled Предыдущая
+			!='\n'
+		each br in arr
+			-if(isFirst)
+				-isFirst = false
+				span.pagination-link.__current!= br
+				!='\n'
+			-else if ( br == ". . ")
+				span.pagination-empty!= br
+				!='\n'
+			-else
+				a(href="#").pagination-link!= br
+				!='\n'
 		-if(showPrevNext == true)
-			a(href="#").pagination-next
+			a(href="#").pagination-next Следующая
+			!='\n'
 
 
 mixin breadcrumbsSimple(brArray, sep, wrap)
@@ -84,14 +89,17 @@ mixin breadcrumbsSimple(brArray, sep, wrap)
 			-wrap = ['', '']
 		+wrapIn( wrap )
 			a(href="./main.html").breadcrumbs-link Главная
+			!='\n'
 			-each br in brArray
 				-if(br== "") continue
 				span.breadcrumbs-sep!= sep
-
+				!='\n'
 				-if( (counter + 1) == brArray.length )
 					span.breadcrumbs-link.__current!= br
+					!='\n'
 				-else
 					a(href="#").breadcrumbs-link!= br
+					!='\n'
 
 				-counter++
 
