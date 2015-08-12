@@ -1,13 +1,13 @@
 {
   "name": "scaffolding-frontend",
-  "version": "0.0.1",
+  "version": "0.1.4",
   "author": "ennet",
   "license": "ISC",
   "private": true,
   "description": "Fast start frontend apps",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/ennett50/____scaffolding.git"
   },
   "dependencies": {
     "browser-sync": "^2.2.3",
