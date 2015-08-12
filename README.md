@@ -1,5 +1,10 @@
 # Scaffolding for fast start
 
+Демо здесь:
+```bash
+http://2015.horeca-studio.ru/____scaffolding/web/
+```
+
 Для работы выполнить:
 ```bash
 npm install -g gulp
