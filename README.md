@@ -1,4 +1,4 @@
-# Scaffolding for fast start
+# Scaffolding for fast start Frontend
 
 Демо здесь:
 ```bash
