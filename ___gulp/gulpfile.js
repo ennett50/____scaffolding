@@ -190,7 +190,9 @@ gulp.task('js:devVendors', function () {
 });
 gulp.task('css:styleBase', function () {
     gulp.src(path.src.styleBase)
-        .pipe(concat('00_base.styl'))
+        .pipe(concat('vendor_base.styl'))
+        .pipe(gulp.dest('../__dev/styles/__tmp/'))
+        .on('error', showErr)
         .pipe(stylus({
             compress: true
         }))
@@ -199,7 +201,7 @@ gulp.task('css:styleBase', function () {
             browsers: ['last 20 version']
         }))
         .on('error', showErr)
-        .pipe(rename('00_base.css'))
+        .pipe(rename('vendor_base.css'))
         .pipe(gulp.dest('../__dev/styles/vendors/'));
 });
 gulp.task('css:styleVendors', function () {
@@ -220,6 +222,8 @@ gulp.task('css:styleProduction', function () {
         .pipe(concat('00_production.styl'))
         .on('error', showErr)
         .pipe(sourcemaps.init())
+        .pipe(gulp.dest('../__dev/styles/__tmp/'))
+        .on('error', showErr)
         .pipe(stylus({
             compress: true
         }))
@@ -256,15 +260,17 @@ gulp.task('sprite:dev', function() {
                 imgPath: 'sprite.png',
 
                 //retinaSrcFilter: [path.src.spriteRetina + '*-2x.png'],
-               // retinaImgName: 'sprite-2x.png',
-              //  retinaImgPath: 'sprite-2x.png',
+                //retinaImgName: 'sprite-2x.png',
+                //retinaImgPath: 'sprite-2x.png',
 
                 algorithm: 'binary-tree',
+                padding: 5,
                 cssTemplate: 'stylus.template.mustache',
                 cssVarMap: function(sprite) {
                     sprite.name = 's-' + sprite.name
                 }
-            }));
+            }))
+            .on('error', showErr);
 
     spriteData.img.pipe(gulp.dest(path.web.img)); // путь, куда сохраняем картинку
     spriteData.css.pipe(gulp.dest(path.src.stylSprite)); // путь, куда сохраняем стили
