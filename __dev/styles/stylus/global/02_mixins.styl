@@ -1,3 +1,7 @@
+base-font()
+	font-family: Arial, sans-serif;
+	font-size 14px
+	color #383435
 content-center(w = 100%, h = w, important = false )
 	important = (important == true ? !important : )
 	position relative
@@ -30,7 +34,7 @@ images(file)
 	url( $img_path + file )
 	
 trans()
-	transition all 0.3s
+	transition all 0.2s
 
 trans-none()
 	transition all 0s
@@ -131,58 +135,37 @@ opacity(val)
 	-ms-filter unquote('progid:DXImageTransform.Microsoft.Alpha(Opacity="' + val*100 + '")')
 
 
-
-Buttons()
-	[type="submit"],
-	[type="button"],
-	[type="reset"],
-	button
-		{block}
-
-TextInputs()
-	[type="text"],
-	main select,
-	main textarea,
-	[type="password"], [type="date"],
-	[type="datetine"], [type="email"],
-	[type="number"], [type="search"],
-	[type="time"], [type="tel"],
-	[type="month"], [type="week"]
-		{block}
+// in css -> background-size(cover)
+background-size(value)
+	background-size value
 
 
-Inputs()
-	[type="submit"],
-	[type="button"],
-	[type="reset"],
-	main button,
-	[type="text"],
-	main select,
-	main textarea,
-	[type="password"], [type="date"],
-	[type="datetine"], [type="email"],
-	[type="number"], [type="search"],
-	[type="time"], [type="tel"],
-	[type="month"], [type="week"]
-		{block}
+// in css with inset -> box-shadow-inset(0, 0, 10px, rgba(0,0,0,0.5))
+// in css  -> box-shadow(0, 0, 10px, rgba(0,0,0,0.5))
+box-shadow-inset(x, y, r, color)
+	box-shadow inset x y r color
 
-this( element = false )
-	return selector() + ( element ? ' ' + element : '' )
-	
-negativeExpand(howMuch)
-	margin-left (- howMuch)
-	margin-right (- howMuch)
-	padding-left howMuch
-	padding-right howMuch
+box-shadow-outer( x, y, r, color)
+	box-shadow x y r color
 
-gr(bg1, bg2)
-	background bg1
-	background unquote("-moz-linear-gradient(top,  " + bg1 + " 0%, " + bg2 + " 100%)")
-	background unquote("-webkit-gradient(linear, left top, left bottom, color-stop(0%," + bg1 + "), color-stop(100%," + bg2 + "))")
-	background unquote("-webkit-linear-gradient(top,  " + bg1 + " 0%," + bg2 + " 100%)")
-	background unquote("-o-linear-gradient(top,  " + bg1 + " 0%," + bg2 + " 100%)")
-	background unquote("-ms-linear-gradient(top,  " + bg1 + " 0%," + bg2 + " 100%)")
-	background unquote("linear-gradient(to bottom,  " + bg1 + " 0%," + bg2 + " 100%)")
+
+// in css with inset -> text-shadow(5px, 1px, 5px, #000)
+text-shadow(x, y, r, color)
+	text-shadow x y r color
+
+// in css with inset -> gradient-linear(#000, #fff)
+gradient-linear(top, bottom)
+	background linear-gradient(top, bottom)
+
+// in css -> text-ellipsis(100px) or text-ellipsis(80%)
+_text-overflow(width_value = 'none')
+	white-space nowrap
+	text-overflow ellipsis
+	line-height: normal;
+	overflow hidden
+	if width_value != 'none'
+		width width_value
+
 
 // sprite mixin
 

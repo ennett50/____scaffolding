@@ -1,23 +1,15 @@
-base-font()
-	font-family Arial, Verdana, sans-serif
-	font-size 14px
-	color #000
-	line-height: 22px;
-
-
 html
 	size(100%, 100%)
-html
-	height: 100%;
 
 body
 	base-font()
 	min-height 100%
+	position relative
 
 .wrapper-content
-	width 990px;
+	width $wrapper_width
 	margin 0 auto
-	padding 0 10px
+	padding 0 5px
 	
 .block
 	display block !important
@@ -40,7 +32,24 @@ body
 	&-column,
 	&-columns
 		display table-column
+	
+	&.__fixed
+		table-layout fixed
+	
+	&.__padding &-cell
+		padding 3px 0
 
+b, strong
+	font-weight 700
+
+i
+	font-style italic
+
+a
+	text-decoration underline
+
+	&:hover
+		text-decoration none
 
 .content-center
 	content-center(100%)
@@ -125,11 +134,9 @@ for $j in 1..100
 		else
 			width $j + '%'  !important
 			
-a
-	trans()
-	text-decoration underline
-	&:hover
-		text-decoration none
+.bt-0
+	border-top-width 0 !important
 
-.hidden
-	display none
+
+*:focus
+	outline: 0 none

@@ -1,0 +1,640 @@
+
+
+input,
+button,
+textarea
+// select
+	padding 0
+	margin 0
+	outline 0
+	border 0
+	display inline-block
+	background transparent
+	//-webkit-appearance none
+	-webkit-border-radius 0px
+	border-box()
+*
+	font inherit
+	color inherit
+
+textarea
+	resize none
+html
+	size(100%, 100%)
+
+body
+	base-font()
+	min-height 100%
+	position relative
+
+.wrapper-content
+	width $wrapper_width
+	margin 0 auto
+	padding 0 5px
+	
+.block
+	display block !important
+
+.inlineBlock
+	display inline-block !important
+
+.table
+	display table
+	width 100%
+
+	&-cell
+		display table-cell
+		vertical-align top
+
+	&-row,
+	&-rows
+		display table-row
+
+	&-column,
+	&-columns
+		display table-column
+	
+	&.__fixed
+		table-layout fixed
+	
+	&.__padding &-cell
+		padding 3px 0
+
+b, strong
+	font-weight 700
+
+i
+	font-style italic
+
+a
+	text-decoration underline
+
+	&:hover
+		text-decoration none
+
+.content-center
+	content-center(100%)
+
+.content-center-force
+	content-center(100%, 100%, true)
+
+.clear,
+.clearfix
+	clear()
+
+.hidden
+	display none
+
+.close-content
+	position fixed
+	top 0
+	left 0
+	z-index 5
+	size(100%, 100%)
+	opacity(20)
+	background #000
+	
+.middle
+	vertical-align middle !important
+
+.bottom
+	vertical-align bottom !important
+
+
+for $i in 0 5 10 15 20 25 30 35 40 45 50 55 60 65 70 75 80 85 90 95 100
+	for $v in 'm' 'p'
+		.{$v}-{ $i }
+			if $v == 'm'
+				margin ($i px)  !important
+			else
+				padding ($i px)  !important
+		.{$v}t-{ $i }
+			if $v == 'm'
+				margin-top ($i px)  !important
+			else
+				padding-top ($i px)  !important
+		.{$v}b-{ $i }
+			if $v == 'm'
+				margin-bottom ($i px)  !important
+			else
+				padding-bottom ($i px)  !important
+		.{$v}l-{ $i }
+			if $v == 'm'
+				margin-left ($i px)  !important
+			else
+				padding-left ($i px)  !important
+		.{$v}r-{ $i }
+			if $v == 'm'
+				margin-right ($i px)  !important
+			else
+				padding-right ($i px)  !important
+				
+		.{$v}h-{ $i }
+			if $v == 'm'
+				margin-right ($i px)  !important
+				margin-left ($i px)  !important
+			else
+				padding-right ($i px)  !important
+				padding-left ($i px)  !important
+				
+		.{$v}v-{ $i }
+			if $v == 'm'
+				margin-top ($i px)  !important
+				margin-bottom ($i px)  !important
+			else
+				padding-top ($i px)  !important
+				padding-bottom ($i px)  !important
+			
+for $j in 1..100
+	.width-{ $j }
+		if( $j == 33 )
+			width 33.33%  !important
+			
+		if( $j == 66 )
+			width 66.66%  !important
+		else
+			width $j + '%'  !important
+			
+.bt-0
+	border-top-width 0 !important
+
+
+*:focus
+	outline: 0 none
+
+.no-borderedTable
+	border: 0!important;
+
+.no-borderedTable td,
+.no-borderedTable th
+	border: 0!important;
+
+
+
+.text
+	base-font()
+	line-height 24px
+	ul
+		list-style none
+		float none
+			li
+				padding-left 5px
+				list-style square outside
+		li
+			margin 5px 0 5px 14px
+			position relative
+			&:before
+				content "•"
+				color #0674bb
+				font-size 22px
+				position absolute
+				top: 0px
+				left -14px
+
+	ol
+		list-style decimal outside
+		float none
+		margin-left 20px
+		
+	img
+		max-width 100%
+		&.left
+			margin-right 10px
+		&.right
+			margin-left 10px
+		
+	p,
+	img,
+	ul,
+	ol
+		margin-bottom 7px
+		
+	table
+		position relative
+		margin-bottom 7px
+		width 100%
+		
+	th
+		font-weight bold
+		background #ccc
+		background rgba(0, 0, 0, 0.1)
+		text-align left
+	td,
+	th
+		padding 5px 7px
+		border 1px solid #666
+
+
+.bold 
+	font-weight bold
+
+.italic 
+	font-style italic
+
+.decoration 
+	text-decoration underline
+
+.uppercase,
+.upper
+	text-transform uppercase
+
+.lowercase,
+.lower
+	text-transform lowercase
+	
+.center
+	text-align center
+	
+.left,
+.to-left
+	float left
+	left 0
+	
+.right,
+.to-right
+	float right
+	right 0
+
+.align-right
+	text-align: right
+.align-center
+	text-align: center
+.align-left
+	text-align: left
+.nowrap
+	white-space nowrap
+
+.module
+	.text
+		padding 0 10px
+
+
+.pops
+	top 0
+	left 0
+	size(0)
+
+.pop
+	&-block
+		position absolute
+		top 0
+		left 0
+		width 100%
+		min-height 100%
+		z-index 999999
+		overflow auto
+
+		display none
+		border-box()
+		overflow hidden
+		padding-bottom 100px
+
+	&-bg
+		position absolute
+		bottom 0
+		left 0
+		right 30px
+		top 0
+		size(auto)
+
+	&-box
+		position relative
+		top 100px
+		left 0
+		right 0
+		background #fff
+		width 500px
+		padding 30px
+		margin auto
+		margin-bottom 100px
+
+	&-btn-close
+		position absolute
+		top 0
+		right 0
+		size(30px)
+		background #f66
+		cursor pointer
+		trans()
+
+
+
+	&-title
+		font-size 20px
+		font-weight bold
+		margin-bottom 20px
+input[type="text"], select, textarea,
+input[type="password"], input[type="date"],
+input[type="datetine"], input[type="email"],
+input[type="number"], input[type="search"],
+input[type="time"], input[type="tel"],
+input[type="month"], input[type="week"]
+	background #fff
+
+.form
+	position relative
+	&-sign
+		color: #d02b1f;
+		display: inline-block;
+		margin-left: 2px;
+		font-size: 12px;
+		position: relative;
+		top: -7px;
+
+	input[type="checkbox"]
+		display inline-block
+		vertical-align middle
+	input[type="checkbox"] + label
+		font-size 13px
+		display inline-block
+		vertical-align middle
+		margin 0
+	.ui-selectmenu-button
+		font-size 14px
+		width 100%!important
+
+	&-item
+		margin-bottom 30px
+		&.error
+			input,
+			select,
+			textarea
+				border 1px solid #faa
+		& .form-attention
+			margin 0
+	&-attention
+		font-style italic
+		font-size 16px
+		font-weight 300
+		margin-bottom 20px
+	textarea
+		height 160px
+	label
+		display block
+		font-size 16px
+		font-weight 300
+		color #000
+	&-files
+		position: relative;
+		padding: 0;
+		text-align: center;
+		margin: -15px 0 17px;
+		& input[type="button"]
+			width auto
+			display inline-block
+			padding 0
+			outline 0 none
+			background transparent
+			cursor pointer
+			margin 0
+			border 0;
+			base-font()
+			color #494949
+			border-bottom 1px dashed #494949
+			line-height normal
+			font-size 14px
+		& span
+			display: block;
+			line-height normal
+			padding-top: 10px;
+
+	.button
+		line-height 53px
+		height 53px
+		font-size 18px
+		font-weight 300
+		padding-top 0
+		padding-bottom 0
+		width 100%
+		text-transform uppercase
+
+
+.error-msg
+	color #9e0b0f
+	margin-bottom 10px
+
+
+.bx-core-window,
+.bxcompprop-content,
+.adm-workarea
+	select[multiple],
+	select
+		-webkit-appearance listbox
+
+	select,
+	select
+		-webkit-appearance menulist
+
+	input[type="radio"]
+		-webkit-appearance radio
+
+	input[type="checkbox"]
+		-webkit-appearance checkbox
+$wrapper_width = 1000px
+$img_path = '../images/'
+$type_anim_link = 2
+
+
+base-font()
+	font-family: Arial, sans-serif;
+	font-size 14px
+	color #383435
+content-center(w = 100%, h = w, important = false )
+	important = (important == true ? !important : )
+	position relative
+	width w important
+	height h important
+
+	> *
+		position absolute
+		top 0 important
+		bottom 0 important
+		left 0 important
+		right 0 important
+		margin auto important
+		max-height 100%
+		max-width 100%
+size(w, h = w)
+	width w
+	height h
+	
+border-box()
+	box-sizing padding-box
+	box-sizing border-box
+	
+background-clip()
+	background-clip padding-box
+
+
+// in css -> images("test.png")
+images(file)
+	url( $img_path + file )
+	
+trans()
+	transition all 0.2s
+
+trans-none()
+	transition all 0s
+clear()
+	&:after
+		content ''
+		display table
+		clear both
+
+// in css -> columns(5)
+columns(count)
+	.column-{count}
+		width floor( (95% / count), 1 )
+		display inline-block
+		vertical-align top
+
+// in css -> width-perc(15)
+width-perc(perc)
+	.perc-{perc}
+		width: (perc)%
+		
+anim-link(type = $type_anim_link)
+	position relative
+	text-decoration none !important
+	overflow hidden
+	
+	if( type == 1)
+		&:after
+			content ''
+			display block
+			position absolute
+			bottom 0
+			left 0
+			size(100%, 0)
+			max-width 100%
+			border-bottom 1px solid
+			trans()
+			
+		&:hover
+			&:after
+				size(0)
+		
+	if (type == 2)
+		&:after,
+		&:before
+			content ''
+			display block
+			position absolute
+			bottom 0
+			size(50%, 0)
+			max-width 50%
+			border-bottom 1px solid
+			trans()
+		&:after
+			right 0
+		&:before
+			left 0
+			
+		&:hover
+			text-decoration none
+			&:after,
+			&:before
+				size(0)
+	
+	if( type == 3)
+		&:after
+			content ''
+			display block
+			position absolute
+			bottom 0
+			left 0
+			right 0
+			margin auto
+			size(100%, 0)
+			max-width 100%
+			border-bottom 1px solid
+			trans()
+			
+		&:hover
+			&:after
+				size(0)
+
+// in css -> blur(20)
+blur(px)
+	filter unquote('progid:DXImageTransform.Microsoft.Blur(PixelRadius="' + px + '")')
+	-webkit-filter unquote('blur(' + px + 'px)')
+	-o-filter unquote('blur(' + px + 'px)')
+	-ms-filter unquote('blur(' + px + 'px)')
+	-moz-filter unquote('blur(' + px + 'px)')
+	filter unquote('blur(' + px + 'px)')
+
+// in css -> opacity(0.2) or  opacity(20)
+opacity(val)
+	if val > 1
+		val = val/100
+	opacity val
+	zoom 1
+	-ms-filter unquote('progid:DXImageTransform.Microsoft.Alpha(Opacity="' + val*100 + '")')
+
+
+// in css -> background-size(cover)
+background-size(value)
+	background-size value
+
+
+// in css with inset -> box-shadow-inset(0, 0, 10px, rgba(0,0,0,0.5))
+// in css  -> box-shadow(0, 0, 10px, rgba(0,0,0,0.5))
+box-shadow-inset(x, y, r, color)
+	box-shadow inset x y r color
+
+box-shadow-outer( x, y, r, color)
+	box-shadow x y r color
+
+
+// in css with inset -> text-shadow(5px, 1px, 5px, #000)
+text-shadow(x, y, r, color)
+	text-shadow x y r color
+
+// in css with inset -> gradient-linear(#000, #fff)
+gradient-linear(top, bottom)
+	background linear-gradient(top, bottom)
+
+// in css -> text-ellipsis(100px) or text-ellipsis(80%)
+_text-overflow(width_value = 'none')
+	white-space nowrap
+	text-overflow ellipsis
+	line-height: normal;
+	overflow hidden
+	if width_value != 'none'
+		width width_value
+
+
+// sprite mixin
+
+spriteWidth($sprite)
+	width $sprite[4]
+
+spriteHeight($sprite)
+	height $sprite[5]
+
+spritePosition($sprite)
+	background-position $sprite[2] $sprite[3]
+
+spriteImage($sprite)
+	background-image url(../images/$sprite[8])
+
+sprite($sprite)
+	if !match('hover', selector()) && !match('active', selector())
+		spriteImage($sprite)
+	spritePosition($sprite)
+	spriteWidth($sprite)
+	spriteHeight($sprite)
+@font-face {
+	font-family: 'ALSRubl';
+	src: url("../fonts/ALSRubl.eot") format("embedded-opentype"), url("../fonts/ALSRubl.woff") format("woff"), url("../fonts/ALSRubl.ttf") format("truetype"), url("../fonts/ALSRubl.svg#ALSRubl") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+.ruble {
+	font-family: 'ALSRubl', sans-serif;
+}
+    $s-butter-2x = 85px 0px -85px 0px 52px 41px 137px 125px 'sprite.png';
+    $s-butter = 85px 46px -85px -46px 26px 21px 137px 125px 'sprite.png';
+    $s-cart-2x = 0px 0px 0px 0px 80px 80px 137px 125px 'sprite.png';
+    $s-cart = 0px 85px 0px -85px 40px 40px 137px 125px 'sprite.png';
+    $s-phone = 45px 85px -45px -85px 40px 40px 137px 125px 'sprite.png';

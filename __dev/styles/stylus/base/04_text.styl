@@ -1,4 +1,67 @@
-.bold
+.no-borderedTable
+	border: 0!important;
+
+.no-borderedTable td,
+.no-borderedTable th
+	border: 0!important;
+
+
+
+.text
+	base-font()
+	line-height 24px
+	ul
+		list-style none
+		float none
+			li
+				padding-left 5px
+				list-style square outside
+		li
+			margin 5px 0 5px 14px
+			position relative
+			&:before
+				content "•"
+				color #0674bb
+				font-size 22px
+				position absolute
+				top: 0px
+				left -14px
+
+	ol
+		list-style decimal outside
+		float none
+		margin-left 20px
+		
+	img
+		max-width 100%
+		&.left
+			margin-right 10px
+		&.right
+			margin-left 10px
+		
+	p,
+	img,
+	ul,
+	ol
+		margin-bottom 7px
+		
+	table
+		position relative
+		margin-bottom 7px
+		width 100%
+		
+	th
+		font-weight bold
+		background #ccc
+		background rgba(0, 0, 0, 0.1)
+		text-align left
+	td,
+	th
+		padding 5px 7px
+		border 1px solid #666
+
+
+.bold 
 	font-weight bold
 
 .italic 
@@ -36,4 +99,8 @@
 	text-align: left
 .nowrap
 	white-space nowrap
+
+.module
+	.text
+		padding 0 10px
 
