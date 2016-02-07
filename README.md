@@ -1,6 +1,5 @@
 # Scaffolding for fast start Frontend
 
-
 Для работы выполнить:
 ```bash
 npm install -g gulp
@@ -9,7 +8,7 @@ npm install
 gulp
 ```
 
-Ввся 'магия' происходит в папке __dev.
+Вся 'магия' происходит в папке __dev.
 Также используются livereload, autoprefixer, uglify, sourcemaps, minifyCSS и др.
 
 Автоматизация:
