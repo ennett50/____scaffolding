@@ -1,4 +1,239 @@
-header.header
-	div.navbar.navbar-inverse.navbar-fixed-top(role='navigation')
-		.container
-				a.navbar-brand(href='index.html') На разводящую страницу
+// Static navbar
+.navbar-top
+	.container
+		.navbar-collapse
+			ul.nav.navbar-nav
+				//
+				li.active
+					a(href='#') BigGeek.ru
+				//
+				li
+					a(href='#') Decusa.ru
+				//
+				li
+					a(href='#') Трэвэл
+				//
+		// /.nav-collapse
+.navbar.navbar-default.navbar-static-top
+	.container
+		.navbar-collapse
+			ul.nav.navbar-nav.nav-xs(data-xs='5')
+				//
+				li
+					a(href='#') О компании
+				//
+				li
+					a(href='#') Доставка и оплата
+				//
+				li
+					a(href='#') Гарантия
+				//
+				li
+					a(href='#') Контакты
+				//
+				li
+					a(href='#') Trade-in
+				//
+				li.active
+					a(href='#') Отзывы
+				//
+			ul.nav.navbar-nav.navbar-right
+				//
+				li
+					span#location-select(data-xs='1')
+						| Ваш город:
+						a(href='#')
+							span Москва
+				//
+				li.hidden-xs
+					span#lk-link(data-xs='3', data-sm='1')
+						a(href='#')
+							i.fa.fa-lock
+							| Личный кабинет
+				//
+		// /.nav-collapse
+.header.container
+	.row
+		#header-logo.col-sm-5.col-xs-12
+			a.logo(href='/')
+				img(src='images/logo.png', alt='')
+		button#toggle-xs.navbar-toggle(type='button')
+			span.icon-bar
+			span.icon-bar
+			span.icon-bar
+		button#toggle-sm.navbar-toggle(type='button')
+			span.icon-bar
+			span.icon-bar
+			span.icon-bar
+		#soc-wrap.col-lg-4
+			ul.soc.navbar.navbar-horizontal(data-xs='7', data-sm='3')
+				//
+				li
+					a(href='#')
+						i.fa.fa-facebook
+				//
+				li
+					a(href='#')
+						i.fa.fa-vk
+				//
+				li
+					a(href='#')
+						i.fa.fa-twitter
+				//
+				li
+					a(href='#')
+						i.fa.fa-instagram
+				//
+				li
+					a(href='#')
+						i.fa.fa-youtube
+				//
+			ul#header-navbar.navbar.navbar-horizontal.nav-xs(data-xs='4', data-sm='2')
+				//
+				li
+					a(href='#') Сервис-центр
+				//
+				li
+					a(href='#') Блог
+				//
+				li
+					a(href='#') Обзоры
+				//
+				li
+					a(href='#') Скидки и акции
+				//
+		#header-phones.col-lg-4.hidden-xs(data-xs='2')
+			ul.navbar.navbar-horizontal
+				li
+					div
+						| 8 (495)
+						b 943 · 49 · 43
+					span Ежедневно с 10:00 до 21:00
+				li
+					div
+						b 8 (800) 943 · 49 · 43
+					a.callback-link(href='#') Заказать обратный звонок
+nav
+	.container
+		div
+			a.sale-link(href='#') Акции
+			#catalog-link
+				a(href='#')
+					span Каталог товаров
+			ul#nav_left.navbar.navbar-horizontal
+				li.sale-link
+					a(href='#') Акции
+				li
+					a(href='#') Apple
+					.combo
+						ul
+							li
+								a(href='#') Watch
+								ul
+									li
+										a(href='#') Apple Watch Sport
+									li
+										a(href='#') Apple Watch
+									li
+										a(href='#') Apple Watch Edition
+							li
+								a(href='#') iPad
+								ul
+									li
+										a(href='#') Apple iPad Air 2
+									li
+										a(href='#') Apple iPad Air
+									li
+										a(href='#') Apple iPad Mini 3 Retina
+									li
+										a(href='#') Apple iPad Mini 2 Retina
+									li
+										a(href='#') Apple iPad mini
+							li
+								a(href='#') Компьютеры и ноутбуки
+								ul
+									li
+										a(href='#') Apple MacBook
+									li
+										a(href='#') Apple MacBook Air
+									li
+										a(href='#') Apple Macbook Pro
+									li
+										a(href='#') Apple MacBook Pro Retina
+									li
+										a(href='#') Apple iMac
+									li
+										a(href='#') Apple Mac mini
+									li
+										a(href='#') Apple Mac Pro
+							li
+								a(href='#') Чехлы и пленки
+								a(href='#') Кабели и зарядки
+							li
+								a(href='#') Watch
+								ul
+									li
+										a(href='#') Apple Watch Sport
+									li
+										a(href='#') Apple Watch
+									li
+										a(href='#') Apple Watch Edition
+							li
+								a(href='#') iPad
+								ul
+									li
+										a(href='#') Apple iPad Air 2
+									li
+										a(href='#') Apple iPad Air
+									li
+										a(href='#') Apple iPad Mini 3 Retina
+									li
+										a(href='#') Apple iPad Mini 2 Retina
+									li
+										a(href='#') Apple iPad mini
+							li
+								a(href='#') Компьютеры и ноутбуки
+								ul
+									li
+										a(href='#') Apple MacBook
+									li
+										a(href='#') Apple MacBook Air
+									li
+										a(href='#') Apple Macbook Pro
+									li
+										a(href='#') Apple MacBook Pro Retina
+									li
+										a(href='#') Apple iMac
+									li
+										a(href='#') Apple Mac mini
+									li
+										a(href='#') Apple Mac Pro
+						.anounce
+							h3 Обзор
+							a.various(class='fancybox.iframe', href='http://www.youtube.com/embed/L9szn1QQfas?autoplay=1')
+								img(src='images/7.jpg', alt='')
+							p Рита Иванова, 13 марта
+							p.title Полный обзор iPhone 6 и iPhonr 6 Plus
+				li
+					a(href='#') Смартфоны
+				li
+					a(href='#') Игровые консоли
+				li
+					a(href='#') Умные часы
+				li
+					a(href='#') Аудио
+				li
+					a(href='#') Гаджеты
+				li
+					a(href='#') Аксессуары
+				li
+					a(href='#') Бренды
+			ul#nav_right.navbar.navbar-horizontal
+				li#search-link
+					form#search(method='post')
+						input(type='submit', name='search', value=' ')
+						input(type='text', name='text', value='', placeholder='Поиск по сайту')
+						button.close
+				li#little_cart
+					a(href='#')
+						span 3

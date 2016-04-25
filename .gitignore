@@ -1,3 +1,6 @@
 .idea
 ___gulp/node_modules/
-web/
+web
+__dev/styles/__tmp/00_production.styl
+__dev/styles/__tmp/vendor_base.styl
+__dev/styles/stylus/global/sprite.styl

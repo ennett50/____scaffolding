@@ -1,2 +1,59 @@
-footer.footer
-    div.container © 2015
+#footer
+	.container
+		.row
+			#footer-left
+				#footer_right.hidden-xs.hidden-sm.hidden-md
+					.phone
+						div
+							| 8 (495)
+							b 943 · 49 · 43
+						span Ежедневно с 10:00 до 21:00
+					ul.soc.navbar.navbar-horizontal
+						//
+						li
+							a(href='#')
+								i.fa.fa-facebook
+						//
+						li
+							a(href='#')
+								i.fa.fa-vk
+						//
+						li
+							a(href='#')
+								i.fa.fa-twitter
+						//
+						li
+							a(href='#')
+								i.fa.fa-instagram
+						//
+						li
+							a(href='#')
+								i.fa.fa-youtube
+						//
+				#copyright.col-sm-7
+					ul#bottom_nav.navbar.navbar-horizontal.hidden-xs.hidden-sm
+						//
+						li
+							a(href='#') О компании
+						//
+						li
+							a(href='#') Доставка и оплата
+						//
+						li
+							a(href='#') Гарантия
+						//
+						li
+							a(href='#') Контакты
+						//
+					div
+						| Сайт носит сугубо информационный характер и не является
+						| публичной офертой, определяемой Статьей 437 (2) ГК РФ.
+						div
+							span © 2009-2015 Интернет магазин Маков.Нет
+							a.callback-link(href='#') Написать нам
+			#feed.col-sm-5
+				div Подписаться на новости
+				form(action='./', method='post')
+					input(type='text', value='', placeholder='Ваш e-mail')
+					//
+					input(type='submit', value='Подписаться')

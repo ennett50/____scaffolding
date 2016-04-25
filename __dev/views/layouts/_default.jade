@@ -5,11 +5,44 @@ doctype html
 html(lang="ru").no-js
 	include includes/head.jade
 	body
-		include includes/header
-		div.container
+		div#wrapper
+			include includes/header
+
 			block block-content
 
 
-		include includes/footer
+			include includes/footer
 
-		include ../modules/popups.jade
+		//-include ../modules/popups.jade
+		#pozvonim-button.BOTTOM_RIGHT.pozvonim-animated
+			.pozvonim-button-wrapper.actionShow
+				.pozvonim-button-border-inner
+				.pozvonim-button-phone.pozvonim-animated
+		#callback-wrap
+			.sidebar
+				button.close
+				form
+					button.close
+					.title
+						| Перезвонить
+						span.hidden-xs  вам
+						| ?
+					div Мы поможем с поиском на сайте и ответим на все ваши вопросы!
+					input(type='text', name='phone', value='', placeholder='+7')
+					button(name='') Перезвоните мне!
+
+
+		<!-- [ START ] Скрипты библиотек-->
+		script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js')
+		//-script(src='http://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js')
+		script(src='js/vendor.min.js')
+		//-script(src='js/jquery.tinyscrollbar.min.js')
+		<!-- [  END  ] Скрипты библиотек-->
+
+		//-script(type='text/javascript', src='js/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6')
+
+
+		<!-- [ START ] Скрипты проекта-->
+		script(src='js/video.js')
+		script(src='js/core.js')
+		<!-- [  END  ] Скрипты проекта-->

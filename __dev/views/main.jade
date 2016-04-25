@@ -2,15 +2,580 @@ extends layouts/_default
 block vars
 	-var currentPageTitle = "Главная страница"
 block title
-	title=currentPageTitle
+	title= currentPageTitle
 block block-content
-	br
-	br
-	br
-	br
-	br
-	br
-	br
+	#slider.clear
+		div
+			.container
+				.main-slider
+					#main-slider.owl-carousel
+						// Slide 1
+						.item.slide1(title='умные часы Apple Watch')
+							img.slide-img(src='images/example/slide1.jpg', alt='')
+							.caption
+								.caption-content
+									h2.caption-title Apple Watch
+									h3.caption-subtitle
+										| Уведомления. Активность. Siri. Passbook.
+										br
+										|                                                 Всегда на вашем запястье.
+						.item.slide1(title='iPhone 6 уже в продаже')
+							img.slide-img(src='images/example/slide1.jpg', alt='')
+							.caption
+								.caption-content
+									h2.caption-title Apple Watch
+									h3.caption-subtitle
+										| Уведомления. Активность. Siri. Passbook.
+										br
+										|                                                     Всегда на вашем запястье.
+						.item.slide1(title='наушники Beats')
+							img.slide-img(src='images/example/slide1.jpg', alt='')
+							.caption
+								.caption-content
+									h2.caption-title Apple Watch
+									h3.caption-subtitle
+										| Уведомления. Активность. Siri. Passbook.
+										br
+										|                                                 Всегда на вашем запястье.
+						.item.slide1(title='Нам доверяют звезды')
+							img.slide-img(src='images/example/slide1.jpg', alt='')
+							.caption
+								.caption-content
+									h2.caption-title Apple Watch
+									h3.caption-subtitle
+										| Уведомления. Активность. Siri. Passbook.
+										br
+										|                                                 Всегда на вашем запястье.
+		#progress
+			.container
+				div
+					.control
+						div
+					.bar
+						.progress
+						ul.navbar.navbar-horizontal
+	#banners
+		.container
+			.row
+				#banner1.banner.col-lg-4.col-md-4.col-sm-6
+					.title iPhone 6
+					.desc
+						| Самый большой iPhone.
+						br
+						|                                 И самый тонкий.
+					img(src='images/example/banner1.png', alt='')
+				#banner2.banner.col-lg-4.col-md-4.col-sm-6
+					.title Новый MacBook
+					.desc
+						| Легко в руке.
+						br
+						|                                 Далеко в будущем.
+					img(src='images/example/banner2.png', alt='')
+				#banner3.banner.col-lg-4.col-md-4.col-sm-12
+					.title #ЛучшиеЦеныРоссии
+					.desc
+						| Скидки до 30% на
+						br
+						|                                 товары по акции.
+					img(src='images/example/banner1.png', alt='')
 
-	br
-	p hello World! <span class="ruble">i</span>
+	#popular.product-list
+		.container
+			h2 Популярные товары
+			div
+				.owl-carousel
+					div
+						.item
+							.item-wrap
+								a.img
+									img(src='images/example/1.jpg', alt='')
+								a.title(href='#') Apple Watch Sport 42мм белый спортивный ремешок
+								.price
+									del 29 990
+									ins 26 990,-
+								a.btn.to_cart(href='#')
+									i
+									| В корзину
+							ul.navbar.navbar-horizontal.colors
+								li.green
+								li.blue
+								li.red
+								li.black
+					div
+						.item
+							.item-wrap
+								a.img
+									img(src='images/example/2.jpg', alt='')
+								a.title(href='#') Apple iPhone 6 64Гб Space Grey
+								.price
+									del 58 990
+									ins 55 990,-
+								a.btn.to_cart(href='#')
+									i
+									| В корзину
+							ul.navbar.navbar-horizontal.colors
+								li.green
+								li.blue
+								li.red
+								li.black
+					div
+						.item
+							.item-wrap
+								a.img
+									img(src='images/example/3.jpg', alt='')
+								a.title(href='#') Наушники Beats Pro белые
+								.price
+									del 29 990
+									ins 24 990,-
+								a.btn.to_cart(href='#')
+									i
+									| В корзину
+							ul.navbar.navbar-horizontal.colors
+								li.green
+								li.blue
+								li.red
+								li.black
+					div
+						.item
+							.item-wrap
+								a.img
+									img(src='images/example/1.jpg', alt='')
+								a.title(href='#') Apple Watch Sport 42мм белый спортивный ремешок
+								.price
+									del 29 990
+									ins 26 990,-
+								a.btn.to_cart(href='#')
+									i
+									| В корзину
+							ul.navbar.navbar-horizontal.colors
+								li.green
+								li.blue
+								li.red
+								li.black
+					div
+						.item
+							.item-wrap
+								a.img
+									img(src='images/example/2.jpg', alt='')
+								a.title(href='#') Apple iPhone 6 64Гб Space Grey
+								.price
+									del 58 990
+									ins 55 990,-
+								a.btn.to_cart(href='#')
+									i
+									| В корзину
+							ul.navbar.navbar-horizontal.colors
+								li.green
+								li.blue
+								li.red
+								li.black
+					div
+						.item
+							.item-wrap
+								a.img
+									img(src='images/example/3.jpg', alt='')
+								a.title(href='#') Наушники Beats Pro белые
+								.price
+									del 29 990
+									ins 24 990,-
+								a.btn.to_cart(href='#')
+									i
+									| В корзину
+							ul.navbar.navbar-horizontal.colors
+								li.green
+								li.blue
+								li.red
+								li.black
+					div
+						.item
+							.item-wrap
+								a.img
+									img(src='images/example/1.jpg', alt='')
+								a.title(href='#') Apple Watch Sport 42мм белый спортивный ремешок
+								.price
+									del 29 990
+									ins 26 990,-
+								a.btn.to_cart(href='#')
+									i
+									| В корзину
+							ul.navbar.navbar-horizontal.colors
+								li.green
+								li.blue
+								li.red
+								li.black
+					div
+						.item
+							.item-wrap
+								a.img
+									img(src='images/example/2.jpg', alt='')
+								a.title(href='#') Apple iPhone 6 64Гб Space Grey
+								.price
+									del 58 990
+									ins 55 990,-
+								a.btn.to_cart(href='#')
+									i
+									| В корзину
+							ul.navbar.navbar-horizontal.colors
+								li.green
+								li.blue
+								li.red
+								li.black
+					div
+						.item
+							.item-wrap
+								a.img
+									img(src='images/example/3.jpg', alt='')
+								a.title(href='#') Наушники Beats Pro белые
+								.price
+									del 29 990
+									ins 24 990,-
+								a.btn.to_cart(href='#')
+									i
+									| В корзину
+							ul.navbar.navbar-horizontal.colors
+								li.green
+								li.blue
+								li.red
+								li.black
+					div
+						.item
+							.item-wrap
+								a.img
+									img(src='images/example/1.jpg', alt='')
+								a.title(href='#') Apple Watch Sport 42мм белый спортивный ремешок
+								.price
+									del 29 990
+									ins 26 990,-
+								a.btn.to_cart(href='#')
+									i
+									| В корзину
+							ul.navbar.navbar-horizontal.colors
+								li.green
+								li.blue
+								li.red
+								li.black
+					div
+						.item
+							.item-wrap
+								a.img
+									img(src='images/example/2.jpg', alt='')
+								a.title(href='#') Apple iPhone 6 64Гб Space Grey
+								.price
+									del 58 990
+									ins 55 990,-
+								a.btn.to_cart(href='#')
+									i
+									| В корзину
+							ul.navbar.navbar-horizontal.colors
+								li.green
+								li.blue
+								li.red
+								li.black
+					div
+						.item
+							.item-wrap
+								a.img
+									img(src='images/example/3.jpg', alt='')
+								a.title(href='#') Наушники Beats Pro белые
+								.price
+									del 29 990
+									ins 24 990,-
+								a.btn.to_cart(href='#')
+									i
+									| В корзину
+							ul.navbar.navbar-horizontal.colors
+								li.green
+								li.blue
+								li.red
+								li.black
+	#info
+		.container
+			.row
+				#blog.col-lg-8.col-xs-12.col-sm-12
+					h2 Блог
+					.row
+						.anounce.col-lg-12.col-xs-12
+							.img
+							.text
+								p Рита Иванова, 13 марта
+								p.title Что делает Apple с вашей информацией
+								p
+									| На прошедшей в июне этого года конференции для разработчиков WWDC 2015 Тим Кук сделал громкое заявление по поводу политики компании в области конфиденциальности данных пользователей.
+								b Комментарии: 17
+						.anounce.col-lg-4.col-sm-4.col-xs-12
+							a.img(href='#')
+								img(src='images/example/4.jpg', alt='')
+							p Рита Иванова, 13 марта
+							p.title Парад спортивных наушников от Audio-Technica
+						.anounce.col-lg-4.col-sm-4.col-xs-12
+							a.img(href='#')
+								img(src='images/example/5.jpg', alt='')
+							p Рита Иванова, 13 марта
+							p.title Китай предложил создать логистический хаб во Владивостоке
+						.anounce.col-lg-4.col-sm-4.col-xs-12
+							a.img(href='#')
+								img(src='images/example/6.jpg', alt='')
+							p Рита Иванова, 13 марта
+							p.title Тим Кук заявил об уверенном росте показателей Apple
+				#video.col-lg-4.col-sm-12
+					h2 Обзоры
+					.row
+						ul.navbar
+							li.col-sm-6.col-lg-12
+								.anounce
+									a.various(class='fancybox.iframe', href='http://www.youtube.com/embed/L9szn1QQfas?autoplay=1')
+										span.img(style='background-image:url(images/example/7.jpg)')
+									p Рита Иванова, 13 марта
+									p.title Полный обзор iPhone 6 и iPhonr 6 Plus
+							li.col-sm-6.col-lg-12
+								.anounce
+									a.various(class='fancybox.iframe', href='http://www.youtube.com/embed/L9szn1QQfas?autoplay=1')
+										span.img(style='background-image:url(images/example/7.jpg)')
+									p Рита Иванова, 13 марта
+									p.title Полный обзор iPhone 6 и iPhonr 6 Plus
+	#discounts.product-list
+		.container
+			h2 Товары со скидкой
+			div
+				.owl-carousel
+					div
+						.item
+							.item-wrap
+								a.img
+									img(src='images/example/1.jpg', alt='')
+								a.title(href='#') Apple Watch Sport 42мм белый спортивный ремешок
+								.price
+									del 29 990
+									ins 26 990,-
+								a.btn.to_cart(href='#')
+									i
+									| В корзину
+							ul.navbar.navbar-horizontal.colors
+								li.green
+								li.blue
+								li.red
+								li.black
+					div
+						.item
+							.item-wrap
+								a.img
+									img(src='images/example/2.jpg', alt='')
+								a.title(href='#') Apple iPhone 6 64Гб Space Grey
+								.price
+									del 58 990
+									ins 55 990,-
+								a.btn.to_cart(href='#')
+									i
+									| В корзину
+							ul.navbar.navbar-horizontal.colors
+								li.green
+								li.blue
+								li.red
+								li.black
+					div
+						.item
+							.item-wrap
+								a.img
+									img(src='images/example/3.jpg', alt='')
+								a.title(href='#') Наушники Beats Pro белые
+								.price
+									del 29 990
+									ins 24 990,-
+								a.btn.to_cart(href='#')
+									i
+									| В корзину
+							ul.navbar.navbar-horizontal.colors
+								li.green
+								li.blue
+								li.red
+								li.black
+					div
+						.item
+							.item-wrap
+								a.img
+									img(src='images/example/1.jpg', alt='')
+								a.title(href='#') Apple Watch Sport 42мм белый спортивный ремешок
+								.price
+									del 29 990
+									ins 26 990,-
+								a.btn.to_cart(href='#')
+									i
+									| В корзину
+							ul.navbar.navbar-horizontal.colors
+								li.green
+								li.blue
+								li.red
+								li.black
+					div
+						.item
+							.item-wrap
+								a.img
+									img(src='images/example/2.jpg', alt='')
+								a.title(href='#') Apple iPhone 6 64Гб Space Grey
+								.price
+									del 58 990
+									ins 55 990,-
+								a.btn.to_cart(href='#')
+									i
+									| В корзину
+							ul.navbar.navbar-horizontal.colors
+								li.green
+								li.blue
+								li.red
+								li.black
+					div
+						.item
+							.item-wrap
+								a.img
+									img(src='images/example/3.jpg', alt='')
+								a.title(href='#') Наушники Beats Pro белые
+								.price
+									del 29 990
+									ins 24 990,-
+								a.btn.to_cart(href='#')
+									i
+									| В корзину
+							ul.navbar.navbar-horizontal.colors
+								li.green
+								li.blue
+								li.red
+								li.black
+					div
+						.item
+							.item-wrap
+								a.img
+									img(src='images/example/1.jpg', alt='')
+								a.title(href='#') Apple Watch Sport 42мм белый спортивный ремешок
+								.price
+									del 29 990
+									ins 26 990,-
+								a.btn.to_cart(href='#')
+									i
+									| В корзину
+							ul.navbar.navbar-horizontal.colors
+								li.green
+								li.blue
+								li.red
+								li.black
+					div
+						.item
+							.item-wrap
+								a.img
+									img(src='images/example/2.jpg', alt='')
+								a.title(href='#') Apple iPhone 6 64Гб Space Grey
+								.price
+									del 58 990
+									ins 55 990,-
+								a.btn.to_cart(href='#')
+									i
+									| В корзину
+							ul.navbar.navbar-horizontal.colors
+								li.green
+								li.blue
+								li.red
+								li.black
+					div
+						.item
+							.item-wrap
+								a.img
+									img(src='images/example/3.jpg', alt='')
+								a.title(href='#') Наушники Beats Pro белые
+								.price
+									del 29 990
+									ins 24 990,-
+								a.btn.to_cart(href='#')
+									i
+									| В корзину
+							ul.navbar.navbar-horizontal.colors
+								li.green
+								li.blue
+								li.red
+								li.black
+					div
+						.item
+							.item-wrap
+								a.img
+									img(src='images/example/1.jpg', alt='')
+								a.title(href='#') Apple Watch Sport 42мм белый спортивный ремешок
+								.price
+									del 29 990
+									ins 26 990,-
+								a.btn.to_cart(href='#')
+									i
+									| В корзину
+							ul.navbar.navbar-horizontal.colors
+								li.green
+								li.blue
+								li.red
+								li.black
+					div
+						.item
+							.item-wrap
+								a.img
+									img(src='images/example/2.jpg', alt='')
+								a.title(href='#') Apple iPhone 6 64Гб Space Grey
+								.price
+									del 58 990
+									ins 55 990,-
+								a.btn.to_cart(href='#')
+									i
+									| В корзину
+							ul.navbar.navbar-horizontal.colors
+								li.green
+								li.blue
+								li.red
+								li.black
+					div
+						.item
+							.item-wrap
+								a.img
+									img(src='images/example/3.jpg', alt='')
+								a.title(href='#') Наушники Beats Pro белые
+								.price
+									del 29 990
+									ins 24 990,-
+								a.btn.to_cart(href='#')
+									i
+									| В корзину
+							ul.navbar.navbar-horizontal.colors
+								li.green
+								li.blue
+								li.red
+								li.black
+	#utp
+		.container
+			ul.navbar.navbar-horizontal
+				//
+				li#utp1
+					.ico
+					.title Быстрая доставка
+				//
+				li#utp2
+					.ico
+					.title Простой возврат
+				//
+				li#utp3
+					.ico
+					.title Скидки и акции
+				//
+				li#utp4
+					.ico
+					.title Консьерж-сервис
+				//
+				li#utp5
+					.ico
+					.title А еще мы классные ;-)
+				//
+
+	.container
+		.row
+			.col-lg-12
+				.text
+					p
+						| Маков.нет уже на протяжении пяти лет является одним из лидеров на рынке мобильной техники и гаджетов. Вы не ошибетесь с выбором, став нашим постоянным клиентом - тысячи людей оценили нашу надежность и качественное обслуживание.
+					p.hidden-xs
+						| Мы привыкли дарить яркие впечатления и делать покупки приятными и быстрыми. Поверьте, нас хватит еще надолго.На нашем сайте собраны сотни товаров от ведущих производителей. У нас вы без проблем сможете купить Macbook Air 2013, Apple Airport Time Capsule и многие другие товары. Мы не гонимся за сиюминутной прибылью, поэтому наши цены доступны. Кроме этого, у нас действует программа премирования постоянных клиентов. Став нашим постоянным клиентом, вы не только получите первоклассный сервис, но и не останетесь без приятных бонусов.
+					p.hidden-xs
+						| Мы напрямую работаем с такими крупными компаниями, как Apple, Samsung, Sony, Blackberry, SGP, incase и Jawbone, что дает полную уверенность в качестве товара и цены. Мы всегда честны перед вами и привыкли ассоциировать наш магазин со словом "надежность". Поэтому на весь товар мы даем годовую гарантию. Наш сервисный центр максимально быстро решит любые проблемы и проведет диагностику.
+					p.hidden-xs
+						| Мы с гордостью сообщаем вам и о том, что являемся одним из самых активных интернет-магазинов в социальных сетях и регулярно проводим уникальные предложения и предлагаем подарки и специальные условия покупки для подписчиков! Приобретая Mac, iPad, а также новейшие iPhone 5 и iPod, вы можете рассчитывать на внимательное отношение к каждому клиенту, квалифицированную помощь в решении технических вопросов и скидки на дальнейшие покупки, мы всегда рады слышать вас и сделать ваше знакомство с гаджетами приятнее!

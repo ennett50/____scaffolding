@@ -56,66 +56,6 @@ width-perc(perc)
 	.perc-{perc}
 		width: (perc)%
 
-anim-link(type = $type_anim_link)
-	position relative
-	text-decoration none !important
-	overflow hidden
-	
-	if( type == 1)
-&:after
-	content ''
-	display block
-	position absolute
-	bottom 0
-	left 0
-	size(100%, 0)
-	max-width 100%
-	border-bottom 1px solid
-	trans()
-
-&:hover
-	&:after
-		size(0)
-
-if (type == 2)
-	&:after,
-	&:before
-		content ''
-		display block
-		position absolute
-		bottom 0
-		size(50%, 0)
-		max-width 50%
-		border-bottom 1px solid
-		trans()
-	&:after
-		right 0
-	&:before
-		left 0
-
-	&:hover
-		text-decoration none
-		&:after,
-		&:before
-			size(0)
-
-if( type == 3)
-&:after
-	content ''
-	display block
-	position absolute
-	bottom 0
-	left 0
-	right 0
-	margin auto
-	size(100%, 0)
-	max-width 100%
-	border-bottom 1px solid
-	trans()
-
-&:hover
-	&:after
-		size(0)
 
 // in css -> blur(20)
 blur(px)

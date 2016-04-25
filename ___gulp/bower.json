@@ -1,0 +1,49 @@
+{
+  "name": "biggeek",
+  "main": "",
+  "authors": [
+    "Анастасия Кирина <ennet@mail.ru>"
+  ],
+  "license": "MIT",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery-ui": "1.*.*",
+    "bootstrap": "^3.3.6",
+    "components-font-awesome": "^4.5.0",
+    "jquery.maskedinput": "^1.4.1",
+    "jquery-placeholder": "^2.3.1",
+    "jquery-ui-touch-punch-improved": "^0.3.1",
+    "fancybox": "^2.1.5",
+    "owl.carousel": "^2.1.1",
+    "tinyscrollbar": "^2.5.0"
+  },
+  "overrides": {
+    "jquery-ui": {
+      "main": [
+        "jquery-ui.js",
+        "./themes/base/jquery-ui.css"
+      ]
+    },
+    "fancybox": {
+      "main": [
+        "source/jquery.fancybox.js",
+        "source/jquery.fancybox.css"
+      ]
+    },
+    "bootstrap": {
+      "main": [
+        "dist/css/bootstrap.css",
+        "dist/css/bootstrap-theme.css",
+        "dist/js/bootstrap.js"
+      ]
+    }
+  }
+}
