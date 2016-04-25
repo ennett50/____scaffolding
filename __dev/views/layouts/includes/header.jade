@@ -1,57 +1,52 @@
-// Static navbar
+
 .navbar-top
 	.container
 		.navbar-collapse
 			ul.nav.navbar-nav
-				//
 				li.active
 					a(href='#') BigGeek.ru
-				//
 				li
 					a(href='#') Decusa.ru
-				//
 				li
 					a(href='#') Трэвэл
-				//
-		// /.nav-collapse
+
 .navbar.navbar-default.navbar-static-top
 	.container
 		.navbar-collapse
 			ul.nav.navbar-nav.nav-xs(data-xs='5')
-				//
+				
 				li
 					a(href='#') О компании
-				//
+				
 				li
 					a(href='#') Доставка и оплата
-				//
+		
 				li
 					a(href='#') Гарантия
-				//
+		
 				li
 					a(href='#') Контакты
-				//
 				li
 					a(href='#') Trade-in
-				//
+		
 				li.active
 					a(href='#') Отзывы
-				//
+		
 			ul.nav.navbar-nav.navbar-right
-				//
+		
 				li
-					span#location-select(data-xs='1')
+					div#location-select(data-xs='1')
 						| Ваш город:
+						!='\n'
 						a(href='#')
 							span Москва
-				//
+		
 				li.hidden-xs
-					span#lk-link(data-xs='3', data-sm='1')
+					div#lk-link(data-xs='3', data-sm='1')
 						a(href='#')
 							i.fa.fa-lock
 							| Личный кабинет
-				//
-		// /.nav-collapse
+
 .header.container
 	.row
 		#header-logo.col-sm-5.col-xs-12
@@ -67,46 +62,46 @@
 			span.icon-bar
 		#soc-wrap.col-lg-4
 			ul.soc.navbar.navbar-horizontal(data-xs='7', data-sm='3')
-				//
+				
 				li
-					a(href='#')
+					a(href='#' target="_blank")
 						i.fa.fa-facebook
-				//
+				
 				li
-					a(href='#')
+					a(href='#' target="_blank")
 						i.fa.fa-vk
-				//
+				
 				li
-					a(href='#')
+					a(href='#' target="_blank")
 						i.fa.fa-twitter
-				//
+				
 				li
-					a(href='#')
+					a(href='#' target="_blank")
 						i.fa.fa-instagram
-				//
+				
 				li
-					a(href='#')
+					a(href='#' target="_blank")
 						i.fa.fa-youtube
-				//
+				
 			ul#header-navbar.navbar.navbar-horizontal.nav-xs(data-xs='4', data-sm='2')
-				//
+				
 				li
 					a(href='#') Сервис-центр
-				//
+				
 				li
 					a(href='#') Блог
-				//
+				
 				li
 					a(href='#') Обзоры
-				//
+				
 				li
 					a(href='#') Скидки и акции
-				//
+				
 		#header-phones.col-lg-4.hidden-xs(data-xs='2')
 			ul.navbar.navbar-horizontal
 				li
 					div
-						| 8 (495)
+						| 8 (495)&nbsp;
 						b 943 · 49 · 43
 					span Ежедневно с 10:00 до 21:00
 				li
@@ -210,7 +205,7 @@ nav
 										a(href='#') Apple Mac Pro
 						.anounce
 							h3 Обзор
-							a.various(class='fancybox.iframe', href='http://www.youtube.com/embed/L9szn1QQfas?autoplay=1')
+							a.various(class='fancybox.iframe', href='http:www.youtube.com/embed/L9szn1QQfas?autoplay=1')
 								img(src='images/7.jpg', alt='')
 							p Рита Иванова, 13 марта
 							p.title Полный обзор iPhone 6 и iPhonr 6 Plus

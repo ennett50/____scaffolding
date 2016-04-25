@@ -132,13 +132,108 @@ sprite($sprite)
 	spriteWidth($sprite)
 	spriteHeight($sprite)
 
-    $s-butter-2x = 85px 0px -85px 0px 52px 41px 137px 125px 'sprite.png';
-    $s-butter = 85px 46px -85px -46px 26px 21px 137px 125px 'sprite.png';
-    $s-cart-2x = 0px 0px 0px 0px 80px 80px 137px 125px 'sprite.png';
-    $s-cart = 0px 85px 0px -85px 40px 40px 137px 125px 'sprite.png';
-    $s-phone = 45px 85px -45px -85px 40px 40px 137px 125px 'sprite.png';
+    $s-icon-basket = 0px 0px 0px 0px 24px 22px 24px 22px 'sprite.png';
 
+.is-content-hidden
+	opacity: 0;
+	transition: .9s all ease-in-out;
+	&.__visible
+		opacity: 1;
+		margin-top: 0;
 
+.navbar-default .navbar-nav>li>a, #footer #bottom_nav a, #footer #copyright .callback-link
+	trans()
+	&:hover
+		color: #2d99f1;
+nav .container ul#nav_left > li > a, #catalog-link a
+	transition: all 500ms ease-out;
+.navbar-brand, .navbar-nav>li>a
+	transition: all 500ms ease-out;
+	&:hover
+		opacity 0.8
+
+#nav_right #search-link form input[type='submit']
+	padding: 0px;
+	width: 46px;
+	border: 0px none;
+	height: 48px;
+	display: block;
+	background:#533654 url(../images/icons/icon-search.png) 50% 50% no-repeat;
+	position:relative;
+	z-index:1;
+	user-select: none;
+	outline:none;
+	transition: all 500ms ease-out;
+	&:hover
+		background-color #533654 + 10%
+#nav_right li#little_cart a
+	padding: 0px;
+	width: 46px;
+	border: 0px none;
+	background:#533654
+	transition: all 500ms ease-out;
+	height: 48px;
+	display: block;
+	position relative
+	&:hover
+		background-color #533654 + 10%
+	&:before
+		content ''
+		display block
+		position absolute
+		top 0
+		left 0
+		right 0
+		bottom 0
+		margin auto
+		sprite($s-icon-basket)
+
+#nav_right .close
+	trans()
+	&:hover
+		opacity 0.8
+a.sale-link
+	transition: all 500ms ease-out;
+	&:hover
+		opacity 0.8
+.product-list .item .item-wrap
+	transition: all 500ms ease-out;
+a
+	cursor pointer
+#info .title a
+	color #333
+#info .title a:hover
+	color: #2d99f1;
+
+.anounce-info
+	_text-overflow(100%)
+
+#info .anounce.col-lg-4 .img img
+	transition: all 500ms ease-out;
+	&:hover
+		transform: scale(1.1);
+#info .anounce.col-lg-4 .img
+	overflow hidden
+	height 152px
+
+input[type='submit']:focus, button, input[type='button']:focus
+	outline 0
+#feed form input[type='submit']
+	transition: all 500ms ease-out;
+	&:hover
+		background: #563856 + 15%;
+a
+	color inherit
+
+.falseLink
+	display inline-block
+	border-bottom 1px dotted #333
+	cursor pointer
+	color #333
+	text-decoration none
+	trans()
+	&:hover
+		opacity 0.7
 
 
 

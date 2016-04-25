@@ -92,6 +92,7 @@ block block-content
 								a.title(href='#') Apple Watch Sport 42мм белый спортивный ремешок
 								.price
 									del 29 990
+									!='\n'
 									ins 26 990,-
 								a.btn.to_cart(href='#')
 									i
@@ -109,6 +110,7 @@ block block-content
 								a.title(href='#') Apple iPhone 6 64Гб Space Grey
 								.price
 									del 58 990
+									!='\n'
 									ins 55 990,-
 								a.btn.to_cart(href='#')
 									i
@@ -126,6 +128,7 @@ block block-content
 								a.title(href='#') Наушники Beats Pro белые
 								.price
 									del 29 990
+									!='\n'
 									ins 24 990,-
 								a.btn.to_cart(href='#')
 									i
@@ -143,6 +146,7 @@ block block-content
 								a.title(href='#') Apple Watch Sport 42мм белый спортивный ремешок
 								.price
 									del 29 990
+									!='\n'
 									ins 26 990,-
 								a.btn.to_cart(href='#')
 									i
@@ -160,6 +164,7 @@ block block-content
 								a.title(href='#') Apple iPhone 6 64Гб Space Grey
 								.price
 									del 58 990
+									!='\n'
 									ins 55 990,-
 								a.btn.to_cart(href='#')
 									i
@@ -177,6 +182,7 @@ block block-content
 								a.title(href='#') Наушники Beats Pro белые
 								.price
 									del 29 990
+									!='\n'
 									ins 24 990,-
 								a.btn.to_cart(href='#')
 									i
@@ -194,6 +200,7 @@ block block-content
 								a.title(href='#') Apple Watch Sport 42мм белый спортивный ремешок
 								.price
 									del 29 990
+									!='\n'
 									ins 26 990,-
 								a.btn.to_cart(href='#')
 									i
@@ -211,6 +218,7 @@ block block-content
 								a.title(href='#') Apple iPhone 6 64Гб Space Grey
 								.price
 									del 58 990
+									!='\n'
 									ins 55 990,-
 								a.btn.to_cart(href='#')
 									i
@@ -228,6 +236,7 @@ block block-content
 								a.title(href='#') Наушники Beats Pro белые
 								.price
 									del 29 990
+									!='\n'
 									ins 24 990,-
 								a.btn.to_cart(href='#')
 									i
@@ -245,6 +254,7 @@ block block-content
 								a.title(href='#') Apple Watch Sport 42мм белый спортивный ремешок
 								.price
 									del 29 990
+									!='\n'
 									ins 26 990,-
 								a.btn.to_cart(href='#')
 									i
@@ -262,6 +272,7 @@ block block-content
 								a.title(href='#') Apple iPhone 6 64Гб Space Grey
 								.price
 									del 58 990
+									!='\n'
 									ins 55 990,-
 								a.btn.to_cart(href='#')
 									i
@@ -279,6 +290,7 @@ block block-content
 								a.title(href='#') Наушники Beats Pro белые
 								.price
 									del 29 990
+									!='\n'
 									ins 24 990,-
 								a.btn.to_cart(href='#')
 									i
@@ -297,26 +309,30 @@ block block-content
 						.anounce.col-lg-12.col-xs-12
 							.img
 							.text
-								p Рита Иванова, 13 марта
-								p.title Что делает Apple с вашей информацией
+								p.anounce-info Рита Иванова, 13 марта
+								p.title
+									a(htef="#") Что делает Apple с вашей информацией
 								p
 									| На прошедшей в июне этого года конференции для разработчиков WWDC 2015 Тим Кук сделал громкое заявление по поводу политики компании в области конфиденциальности данных пользователей.
 								b Комментарии: 17
 						.anounce.col-lg-4.col-sm-4.col-xs-12
-							a.img(href='#')
+							a(href="").img
 								img(src='images/example/4.jpg', alt='')
-							p Рита Иванова, 13 марта
-							p.title Парад спортивных наушников от Audio-Technica
+							p.anounce-info Рита Иванова, 13 марта
+							p.title
+								a(htef="#") Парад спортивных наушников от Audio-Technica
 						.anounce.col-lg-4.col-sm-4.col-xs-12
-							a.img(href='#')
+							a(href="").img
 								img(src='images/example/5.jpg', alt='')
-							p Рита Иванова, 13 марта
-							p.title Китай предложил создать логистический хаб во Владивостоке
+							p.anounce-info Рита Иванова, 13 марта
+							p.title
+								a(htef="#")  Китай предложил создать логистический хаб во Владивостоке
 						.anounce.col-lg-4.col-sm-4.col-xs-12
-							a.img(href='#')
+							a(href="").img
 								img(src='images/example/6.jpg', alt='')
-							p Рита Иванова, 13 марта
-							p.title Тим Кук заявил об уверенном росте показателей Apple
+							p.anounce-info Рита Иванова, 13 мартаs
+							p.title
+								a(htef="#")  Тим Кук заявил об уверенном росте показателей Apple
 				#video.col-lg-4.col-sm-12
 					h2 Обзоры
 					.row
@@ -326,13 +342,15 @@ block block-content
 									a.various(class='fancybox.iframe', href='http://www.youtube.com/embed/L9szn1QQfas?autoplay=1')
 										span.img(style='background-image:url(images/example/7.jpg)')
 									p Рита Иванова, 13 марта
-									p.title Полный обзор iPhone 6 и iPhonr 6 Plus
+									p.title
+										a(href="") Полный обзор iPhone 6 и iPhonr 6 Plus
 							li.col-sm-6.col-lg-12
 								.anounce
 									a.various(class='fancybox.iframe', href='http://www.youtube.com/embed/L9szn1QQfas?autoplay=1')
 										span.img(style='background-image:url(images/example/7.jpg)')
 									p Рита Иванова, 13 марта
-									p.title Полный обзор iPhone 6 и iPhonr 6 Plus
+									p.title
+										a(href="") Полный обзор iPhone 6 и iPhonr 6 Plus
 	#discounts.product-list
 		.container
 			h2 Товары со скидкой
@@ -545,27 +563,27 @@ block block-content
 	#utp
 		.container
 			ul.navbar.navbar-horizontal
-				//
+
 				li#utp1
 					.ico
 					.title Быстрая доставка
-				//
+
 				li#utp2
 					.ico
 					.title Простой возврат
-				//
+
 				li#utp3
 					.ico
 					.title Скидки и акции
-				//
+
 				li#utp4
 					.ico
 					.title Консьерж-сервис
-				//
+
 				li#utp5
 					.ico
 					.title А еще мы классные ;-)
-				//
+
 
 	.container
 		.row

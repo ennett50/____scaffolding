@@ -347,6 +347,9 @@ gulp.task('watch', function () {
     watch([path.watch.jsProduction], function (event, cb) {
         gulp.start('js:devProduction');
     });
+    watch(['../__dev/copy/**/*.*'], function (event, cb) {
+        gulp.start('copy:dev');
+    });
     //watch([path.watch.jsVendors], function(event, cb) {
     //    gulp.start('js:devVendors');
     //});
